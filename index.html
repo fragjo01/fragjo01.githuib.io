@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joao Benvenutti Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <h1>Joao Benvenutti</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <img src="assets/profile.jpg" alt="Joao Benvenutti" class="profile-pic">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>Hi! I'm Joao Henrique Fraga Benvenutti, a Data Science major and Computer Science minor. I enjoy building data-driven projects and interactive web applications.</p>
+      <a href="assets/resume.pdf" class="btn" target="_blank">Download Resume</a>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Tennis Project</h3>
+      <div class="carousel">
+        <img id="carousel-img" src="assets/tennisproject/Screenshot 2025-11-28 at 13.59.51.png" alt="Tennis Project Screenshot">
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Social -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="social-icons">
+      <a href="https://github.com/yourusername" target="_blank">
+        <img src="assets/icons/github.svg" alt="GitHub">
+      </a>
+      <a href="https://www.linkedin.com/in/yourusername" target="_blank">
+        <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+      </a>
+      <a href="mailto:fragjo01@luther.edu">
+        <img src="assets/icons/email.svg" alt="Email">
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Joao Benvenutti</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
 
