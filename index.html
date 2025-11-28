@@ -1,80 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joao Benvenutti Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joao Benvenutti Portfolio</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- Header / Hero -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Joao Benvenutti</h1>
-      <p>Data Science & Computer Science Student</p>
-      <a href="assets/resume.pdf" class="btn resume-btn" target="_blank">📄 Download Resume</a>
-    </div>
-  </header>
-
-  <!-- Tabs Navigation -->
-  <nav class="tabs-nav">
-    <button class="tab-btn active" onclick="openTab('about')">About Me</button>
-    <button class="tab-btn" onclick="openTab('projects')">Projects</button>
-    <button class="tab-btn" onclick="openTab('resume')">Resume</button>
-  </nav>
-
-  <!-- About Me Tab -->
-  <section id="about" class="tab-content active fade">
-    <div class="about-container">
-      <img src="assets/profile.jpg" alt="Joao Benvenutti" class="profile-pic">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>Hi! I'm Joao Henrique Fraga Benvenutti, a Data Science major and Computer Science minor. I enjoy building data-driven projects, machine learning models, and interactive web applications.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects Tab -->
-  <section id="projects" class="tab-content fade">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <!-- Thumbnails -->
-      <img class="thumb" src="assets/tennisproject/Screenshot 2025-11-28 at 13.59.51.png" onclick="openLightbox(0)">
-      <img class="thumb" src="assets/tennisproject/Screenshot 2025-11-28 at 13.59.59.png" onclick="openLightbox(1)">
-      <img class="thumb" src="assets/tennisproject/Screenshot 2025-11-28 at 14.00.07.png" onclick="openLightbox(2)">
-      <img class="thumb" src="assets/tennisproject/Screenshot 2025-11-28 at 14.00.24.png" onclick="openLightbox(3)">
-      <img class="thumb" src="assets/tennisproject/Screenshot 2025-11-28 at 14.00.32.png" onclick="openLightbox(4)">
-      <img class="thumb" src="assets/tennisproject/Screenshot 2025-11-28 at 14.00.40.png" onclick="openLightbox(5)">
-      <img class="thumb" src="assets/tennisproject/Screenshot 2025-11-28 at 14.00.49.png" onclick="openLightbox(6)">
-      <img class="thumb" src="assets/tennisproject/Screenshot 2025-11-28 at 14.00.56.png" onclick="openLightbox(7)">
-      <img class="thumb" src="assets/tennisproject/Screenshot 2025-11-28 at 14.01.04.png" onclick="openLightbox(8)">
-      <img class="thumb" src="assets/tennisproject/Screenshot 2025-11-28 at 14.01.12.png" onclick="openLightbox(9)">
-      <img class="thumb" src="assets/tennisproject/Screenshot 2025-11-28 at 14.01.21.png" onclick="openLightbox(10)">
-      <img class="thumb" src="assets/tennisproject/Screenshot 2025-11-28 at 14.01.40.png" onclick="openLightbox(11)">
-      <img class="thumb" src="assets/tennisproject/Screenshot 2025-11-28 at 14.02.17.png" onclick="openLightbox(12)">
-    </div>
-  </section>
-
-  <!-- Resume Tab -->
-  <section id="resume" class="tab-content fade">
-    <h2>Resume</h2>
-    <p>Click below to view or download my resume:</p>
-    <a href="assets/resume.pdf" class="btn resume-btn" target="_blank">📄 View / Download Resume</a>
-  </section>
-
-  <!-- Lightbox -->
-  <div id="lightbox" onclick="closeLightbox()">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" id="lightbox-img">
-    <button class="prev" onclick="prevSlide(event)">&#10094;</button>
-    <button class="next" onclick="nextSlide(event)">&#10095;</button>
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>Joao Benvenutti</h1>
+    <p>Data Science & Computer Science Student</p>
+    <a href="assets/resume.pdf" class="btn resume-btn" target="_blank">📄 Download Resume</a>
   </div>
+</header>
 
-  <footer>
-    <p>&copy; 2025 Joao Benvenutti</p>
-  </footer>
+<!-- Navigation Tabs -->
+<nav class="tabs-nav">
+  <button class="tab-btn active" onclick="openTab('about')">About Me</button>
+  <button class="tab-btn" onclick="openTab('projects')">Projects</button>
+  <button class="tab-btn" onclick="openTab('resume')">Resume</button>
+</nav>
 
-  <script src="script.js"></script>
+<!-- About Me -->
+<section id="about" class="tab-content active fade">
+  <div class="about-container">
+    <img src="assets/profile.jpg" alt="Joao Benvenutti" class="profile-pic">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>Hi! I'm Joao Henrique Fraga Benvenutti, a Data Science major and Computer Science minor. I enjoy building data-driven projects, machine learning models, and interactive web applications.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects" class="tab-content fade">
+  <h2>Projects</h2>
+  <div class="project-grid">
+    <!-- Example Thumbnail -->
+    <div class="project-card" onclick="openLightbox(0)">
+      <img src="assets/tennisproject/Screenshot 2025-11-28 at 13.59.51.png" class="thumb">
+      <div class="overlay">Tennis Project</div>
+    </div>
+    <!-- Repeat project-card for all screenshots -->
+  </div>
+</section>
+
+<!-- Resume -->
+<section id="resume" class="tab-content fade">
+  <h2>Resume</h2>
+  <p>Click below to view or download my resume:</p>
+  <a href="assets/resume.pdf" class="btn resume-btn" target="_blank">📄 View / Download Resume</a>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span class="close">&times;</span>
+  <img class="lightbox-img" id="lightbox-img">
+  <button class="prev" onclick="prevSlide(event)">&#10094;</button>
+  <button class="next" onclick="nextSlide(event)">&#10095;</button>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="social-icons">
+    <a href="https://github.com/yourusername" target="_blank"><img src="assets/icons/github.svg" alt="GitHub"></a>
+    <a href="https://linkedin.com/in/yourusername" target="_blank"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
+    <a href="mailto:fragjo01@luther.edu"><img src="assets/icons/email.svg" alt="Email"></a>
+  </div>
+  <p>&copy; 2025 Joao Benvenutti</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
