@@ -1,3 +1,16 @@
+// Tab switching
+function openTab(tabId) {
+  const tabs = document.querySelectorAll('.tab-content');
+  const buttons = document.querySelectorAll('.tab-btn');
+  
+  tabs.forEach(tab => tab.classList.remove('active'));
+  buttons.forEach(btn => btn.classList.remove('active'));
+  
+  document.getElementById(tabId).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// Project screenshots array
 const screenshots = [
   "assets/tennisproject/Screenshot 2025-11-28 at 13.59.51.png",
   "assets/tennisproject/Screenshot 2025-11-28 at 13.59.59.png",
@@ -14,15 +27,29 @@ const screenshots = [
   "assets/tennisproject/Screenshot 2025-11-28 at 14.02.17.png"
 ];
 
+// Lightbox
 let current = 0;
-const imgEl = document.getElementById("carousel-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
 
-function nextSlide() {
-  current = (current + 1) % screenshots.length;
-  imgEl.src = screenshots[current];
+function openLightbox(index) {
+  current = index;
+  lightbox.style.display = "flex";
+  lightboxImg.src = screenshots[current];
 }
 
-function prevSlide() {
+function closeLightbox() {
+  lightbox.style.display = "none";
+}
+
+function nextSlide(event) {
+  event.stopPropagation();
+  current = (current + 1) % screenshots.length;
+  lightboxImg.src = screenshots[current];
+}
+
+function prevSlide(event) {
+  event.stopPropagation();
   current = (current - 1 + screenshots.length) % screenshots.length;
-  imgEl.src = screenshots[current];
+  lightboxImg.src = screenshots[current];
 }
