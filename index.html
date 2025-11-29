@@ -70,7 +70,7 @@ main{padding:36px 0;min-height:60vh}
   max-width:100%;
 }
 .project-title{margin:0 0 12px 0;color:var(--navy-900);font-size:20px}
-.project-meta > p{color:var(--muted);font-size:14px;line-height:1.6;margin:12px 0}
+.project-meta > p, .project-meta ul, .project-meta .project-desc{color:var(--muted);font-size:14px;line-height:1.6;margin:12px 0}
 .meta-list{list-style:none;padding:0;margin:12px 0;color:var(--muted);font-size:14px}
 .meta-list li{margin:8px 0}
 .project-links{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
@@ -145,7 +145,7 @@ main{padding:36px 0;min-height:60vh}
 <div class="project-body">
 <div class="project-meta">
 <h3 class="project-title">Tennis Match Data Analysis</h3>
-<p>This comprehensive tennis analytics project demonstrates my ability to handle real-world sports data from collection through deployment...</p>
+<p class="project-desc">This comprehensive tennis analytics project demonstrates my ability to handle real-world sports data from collection through deployment...</p>
 <ul class="meta-list">
 <li><strong>Role:</strong> Data Analyst & ML Engineer</li>
 <li><strong>Duration:</strong> Mar 2025 — Nov 2025</li>
@@ -164,11 +164,12 @@ main{padding:36px 0;min-height:60vh}
 <!-- Sports Car Project -->
 <div class="project-body">
 <div class="project-meta">
-<h3 class="project-title">Sports Car Value Analysis</h3>
-<p>Analysis of sports car performance vs price metrics.</p>
+<h3 class="project-title">Sports Car Price Analysis</h3>
+<p class="project-desc">This project analyzes the performance vs. price trade-off in high-end sports cars using R. We explore how efficiently each car delivers horsepower, torque, and acceleration relative to its price.</p>
 <ul class="meta-list">
-<li><strong>Role:</strong> Data Analyst</li>
-<li><strong>Tech:</strong> Python, Pandas, Matplotlib</li>
+<li><strong>Outputs:</strong> Cleaned dataset: output/processed_data.csv; Visual charts (PDF): output/charts/</li>
+<li><strong>Key Insights:</strong> Some cars deliver much higher performance per dollar. Acceleration (0–60 time), horsepower, and torque are not always aligned with price. Top 20 rankings highlight the best value sports cars.</li>
+<li><strong>Tools:</strong> R (tidyverse, ggplot2), Jupyter with R kernel</li>
 </ul>
 <div class="gallery-panel">
 <div class="gallery-grid" id="sportsCarGallery"></div>
@@ -179,11 +180,12 @@ main{padding:36px 0;min-height:60vh}
 <!-- Stock Forecasting Project -->
 <div class="project-body">
 <div class="project-meta">
-<h3 class="project-title">Stock Forecasting</h3>
-<p>Forecasting major stock prices using historical data and Prophet models.</p>
+<h3 class="project-title">Stock Forecast Project</h3>
+<p class="project-desc">This is a basic project where I used SQL, Python (with Prophet), and Power BI to forecast stock prices.</p>
 <ul class="meta-list">
-<li><strong>Role:</strong> Data Scientist</li>
-<li><strong>Tech:</strong> Python, Pandas, Prophet, Matplotlib</li>
+<li><strong>Tools:</strong> SQL for data filtering, Python with Prophet for forecasting, Power BI for visual dashboards</li>
+<li><strong>Stocks:</strong> AAPL, MSFT, AMZN, GOOGL</li>
+<li><strong>What I Did:</strong> Used SQL to get the data; used Prophet to forecast prices for 1 year; plotted the forecast vs. actual values; created a bar chart to compare expected growth; optionally created a dashboard in Power BI</li>
 </ul>
 <div class="gallery-panel">
 <div class="gallery-grid" id="stockGallery"></div>
