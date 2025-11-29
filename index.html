@@ -1,21 +1,4 @@
-<section id="projects" class="tab-content" aria-label="Projects">
-      <div class="project-header">
-        <h2>Projects</h2>
-        <p class="project-sub">
-          A collection of data science and analytics projects showcasing end-to-end data pipelines, statistical modeling, and machine learning applications.
-        </p>
-      </div>
-
-      <!-- Tennis Analytics Project -->
-      <div class="project-body">
-        <div class="project-meta">
-          <h3 class="project-title">Tennis Analytics — Case Study</h3>
-          <p>
-            This comprehensive tennis analytics project demonstrates my ability to handle real-world sports data from collection through deployment. I developed an ETL pipeline to clean and structure match-level and point-by-point data, then engineered performance metrics including serve efficiency, return ratings, rally patterns, and winner-to-error ratios. Using exploratory data analysis with Matplotlib and Seaborn, I identified key performance indicators that separate top players from the field. I built a machine learning model using scikit-learn to predict match outcomes with 78% accuracy, leveraging features like momentum shifts and surface-specific performance. The final deliverable includes an interactive Flask dashboard for real-time player comparisons, fully documented Jupyter notebooks for reproducibility, and a comprehensive technical report with actionable insights for coaches and analysts.
-          </p>
-
-          <ul class="meta-list">
-            <li><strong>Role:</strong> Data Analyst & ML Engineer<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -258,41 +241,83 @@
       </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects" class="tab-content" aria-label="Projects">
       <div class="project-header">
-        <h2>Tennis Analytics — Case Study</h2>
+        <h2>Projects</h2>
         <p class="project-sub">
-          End-to-end analysis of tennis match data: data cleaning, exploratory analysis, feature engineering, model building, and visual storytelling. Below are representative visual outputs and dashboard views.
+          A collection of data science and analytics projects showcasing end-to-end data pipelines, statistical modeling, and machine learning applications.
         </p>
       </div>
 
+      <!-- Tennis Analytics -->
       <div class="project-body">
         <div class="project-meta">
           <h3 class="project-title">Tennis Match Data Analysis</h3>
           <p>
-            This comprehensive tennis analytics project demonstrates my ability to handle real-world sports data from collection through deployment. I developed an ETL pipeline to clean and structure match-level and point-by-point data, then engineered performance metrics including serve efficiency, return ratings, rally patterns, and winner-to-error ratios. Using exploratory data analysis with Matplotlib and Seaborn, I identified key performance indicators that separate top players from the field. I built a machine learning model using scikit-learn to predict match outcomes with 78% accuracy, leveraging features like momentum shifts and surface-specific performance. The final deliverable includes an interactive Flask dashboard for real-time player comparisons, fully documented Jupyter notebooks for reproducibility, and a comprehensive technical report with actionable insights for coaches and analysts.
+            End-to-end tennis analytics: ETL pipelines, EDA, feature engineering, machine learning predictions, and interactive dashboards.
           </p>
-
           <ul class="meta-list">
             <li><strong>Role:</strong> Data Analyst & ML Engineer</li>
             <li><strong>Duration:</strong> Mar 2025 — Nov 2025</li>
             <li><strong>Tech:</strong> Python, Pandas, Scikit-learn, Flask, SQL, Docker</li>
           </ul>
-
           <div class="project-links">
             <a class="btn btn-outline" href="https://github.com/fragjo01" target="_blank" rel="noopener">View Repo</a>
             <a class="btn" href="assets/tennisproject/project1.html" target="_blank" rel="noopener">Project Report</a>
           </div>
         </div>
-
         <div class="gallery-panel">
-          <div class="gallery-grid" id="galleryGrid">
-            <!-- Images will be loaded by JavaScript -->
+          <div class="gallery-grid" id="tennisGallery"></div>
+        </div>
+      </div>
+
+      <!-- Sports Car Value Analysis -->
+      <div class="project-body">
+        <div class="project-meta">
+          <h3 class="project-title">Sports Car Value Analysis</h3>
+          <p>
+            Historical sports car price analysis with predictive modeling for investors and collectors.
+          </p>
+          <ul class="meta-list">
+            <li><strong>Role:</strong> Data Analyst & ML Engineer</li>
+            <li><strong>Duration:</strong> Aug 2025 — Nov 2025</li>
+            <li><strong>Tech:</strong> Python, Pandas, Scikit-learn, Matplotlib, Seaborn</li>
+          </ul>
+          <div class="project-links">
+            <a class="btn btn-outline" href="https://github.com/fragjo01/sports-car-value-analysis" target="_blank" rel="noopener">View Repo</a>
+            <a class="btn" href="assets/sports-car-value-analysis/report.html" target="_blank" rel="noopener">Project Report</a>
           </div>
+        </div>
+        <div class="gallery-panel">
+          <div class="gallery-grid" id="sportsCarGallery"></div>
+        </div>
+      </div>
+
+      <!-- Stock Forecast -->
+      <div class="project-body">
+        <div class="project-meta">
+          <h3 class="project-title">Stock Forecasting</h3>
+          <p>
+            Time series and machine learning models to predict stock prices with a Flask dashboard for visualization.
+          </p>
+          <ul class="meta-list">
+            <li><strong>Role:</strong> Data Analyst & ML Engineer</li>
+            <li><strong>Duration:</strong> Sep 2025 — Nov 2025</li>
+            <li><strong>Tech:</strong> Python, Pandas, Scikit-learn, Statsmodels, Flask, Plotly</li>
+          </ul>
+          <div class="project-links">
+            <a class="btn btn-outline" href="https://github.com/fragjo01/stock-forecast" target="_blank" rel="noopener">View Repo</a>
+            <a class="btn" href="assets/stock-forecast/report.html" target="_blank" rel="noopener">Project Report</a>
+          </div>
+        </div>
+        <div class="gallery-panel">
+          <div class="gallery-grid" id="stockGallery"></div>
         </div>
       </div>
     </section>
 
+    <!-- Resume Section -->
     <section id="resume" class="tab-content" aria-label="Resume">
       <div class="resume-panel">
         <h2>Resume</h2>
@@ -302,113 +327,88 @@
     </section>
   </main>
 
+  <!-- Lightbox -->
   <div id="lightbox" class="lightbox" aria-hidden="true" onclick="closeLightbox()">
-    <button class="lightbox-close" aria-label="Close" onclick="closeLightbox(event)">&times;</button>
-    <button class="lightbox-prev" aria-label="Previous" onclick="prevSlide(event)"><i class="fas fa-chevron-left"></i></button>
-    <img id="lightboxImage" class="lightbox-image" alt="">
-    <button class="lightbox-next" aria-label="Next" onclick="nextSlide(event)"><i class="fas fa-chevron-right"></i></button>
+    <button class="lightbox-close" onclick="closeLightbox(event)">×</button>
+    <button class="lightbox-prev" onclick="prevSlide()">‹</button>
+    <img id="lightboxImage" class="lightbox-image" src="" alt="Project Screenshot" />
+    <button class="lightbox-next" onclick="nextSlide()">›</button>
   </div>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>© <span id="year"></span> Joao Benvenutti</div>
+      <span>&copy; 2025 Joao Benvenutti</span>
       <div class="footer-links">
         <a href="https://github.com/fragjo01" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
         <a href="https://www.linkedin.com/in/joao-benvenutti-055585330/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="mailto:fragjo01@luther.edu"><i class="fa fa-envelope"></i> Email</a>
       </div>
     </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    function openTab(tabId, el) {
-      const tabs = document.querySelectorAll('.tab-content');
-      tabs.forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      const node = document.getElementById(tabId);
-      if (node) node.classList.add('active');
-      if (el) el.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    function openTab(tabName, el){
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(tabName).classList.add('active');
+      el.classList.add('active');
     }
 
-    const screenshots = [
-      "assets/tennisproject/Screenshot 2025-11-28 at 13.59.51.png",
-      "assets/tennisproject/Screenshot 2025-11-28 at 13.59.59.png",
-      "assets/tennisproject/Screenshot 2025-11-28 at 14.00.07.png",
-      "assets/tennisproject/Screenshot 2025-11-28 at 14.00.24.png",
-      "assets/tennisproject/Screenshot 2025-11-28 at 14.00.32.png",
-      "assets/tennisproject/Screenshot 2025-11-28 at 14.00.40.png",
-      "assets/tennisproject/Screenshot 2025-11-28 at 14.00.49.png",
-      "assets/tennisproject/Screenshot 2025-11-28 at 14.00.56.png",
-      "assets/tennisproject/Screenshot 2025-11-28 at 14.01.04.png",
-      "assets/tennisproject/Screenshot 2025-11-28 at 14.01.12.png",
-      "assets/tennisproject/Screenshot 2025-11-28 at 14.01.21.png",
-      "assets/tennisproject/Screenshot 2025-11-28 at 14.01.40.png",
-      "assets/tennisproject/Screenshot 2025-11-28 at 14.02.17.png"
+    const tennisScreenshots = [
+      "assets/tennisproject/Screenshot1.png",
+      "assets/tennisproject/Screenshot2.png"
+    ];
+    const sportsCarScreenshots = [
+      "assets/sports-car-value-analysis/car1.png",
+      "assets/sports-car-value-analysis/car2.png"
+    ];
+    const stockScreenshots = [
+      "assets/stock-forecast/stock1.png",
+      "assets/stock-forecast/stock2.png"
     ];
 
-    let current = 0;
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
+    function loadGallery(images, galleryId) {
+      const galleryGrid = document.getElementById(galleryId);
+      images.forEach((src,index)=>{
+        const button=document.createElement('button');
+        button.className='thumb';
+        button.onclick=()=>openLightbox(index,images);
+        const img=document.createElement('img');
+        img.src=src;
+        img.alt=`Project screenshot ${index+1}`;
+        img.onerror=function(){
+          button.innerHTML='<div style="width:100%;height:180px;display:flex;align-items:center;justify-content:center;background:#f0f0f0;color:#666;font-size:12px;padding:10px;text-align:center;">Image not found<br>'+src+'</div>';
+          button.onclick=null;
+        }
+        button.appendChild(img);
+        galleryGrid.appendChild(button);
+      });
+    }
 
-    // Load gallery images
-    const galleryGrid = document.getElementById('galleryGrid');
-    screenshots.forEach((src, index) => {
-      const button = document.createElement('button');
-      button.className = 'thumb';
-      button.onclick = () => openLightbox(index);
-      
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = `Tennis screenshot ${index + 1}`;
-      img.onerror = function() {
-        console.error('Failed to load image:', src);
-        button.innerHTML = '<div style="width:100%;height:180px;display:flex;align-items:center;justify-content:center;background:#f0f0f0;color:#666;font-size:12px;padding:10px;text-align:center;">Image not found<br>' + src + '</div>';
-        button.onclick = null;
-      };
-      img.onload = function() {
-        console.log('Successfully loaded:', src);
-      };
-      
-      button.appendChild(img);
-      galleryGrid.appendChild(button);
-    });
-
-    function openLightbox(index) {
-      current = index;
-      lightboxImage.src = screenshots[current];
+    function openLightbox(index, images){
+      const lightbox=document.getElementById('lightbox');
+      const lightboxImage=document.getElementById('lightboxImage');
+      lightboxImage.src=images[index];
       lightbox.classList.add('active');
-      lightbox.setAttribute('aria-hidden','false');
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow='hidden';
+      window.currentLightbox={index,images};
     }
 
-    function closeLightbox(e) {
-      if (e) e.stopPropagation();
-      lightbox.classList.remove('active');
-      lightbox.setAttribute('aria-hidden','true');
-      document.body.style.overflow = '';
-    }
+    function closeLightbox(e){if(e)e.stopPropagation();document.getElementById('lightbox').classList.remove('active');document.body.style.overflow='';}
 
-    function nextSlide(e) {
-      if (e) e.stopPropagation();
-      current = (current + 1) % screenshots.length;
-      lightboxImage.src = screenshots[current];
-    }
+    function nextSlide(){let {index,images}=window.currentLightbox;index=(index+1)%images.length;window.currentLightbox.index=index;document.getElementById('lightboxImage').src=images[index];}
 
-    function prevSlide(e) {
-      if (e) e.stopPropagation();
-      current = (current - 1 + screenshots.length) % screenshots.length;
-      lightboxImage.src = screenshots[current];
-    }
+    function prevSlide(){let {index,images}=window.currentLightbox;index=(index-1+images.length)%images.length;window.currentLightbox.index=index;document.getElementById('lightboxImage').src=images[index];}
 
-    document.addEventListener('keydown', function(ev){
-      if (lightbox.classList.contains('active')) {
-        if (ev.key === 'ArrowRight') nextSlide();
-        if (ev.key === 'ArrowLeft') prevSlide();
-        if (ev.key === 'Escape') closeLightbox();
-      }
+    loadGallery(tennisScreenshots,'tennisGallery');
+    loadGallery(sportsCarScreenshots,'sportsCarGallery');
+    loadGallery(stockScreenshots,'stockGallery');
+
+    document.addEventListener('keydown',function(ev){
+      const lightbox=document.getElementById('lightbox');
+      if(!lightbox.classList.contains('active')) return;
+      if(ev.key==='ArrowRight') nextSlide();
+      if(ev.key==='ArrowLeft') prevSlide();
+      if(ev.key==='Escape') closeLightbox();
     });
   </script>
 </body>
