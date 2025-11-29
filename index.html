@@ -1,117 +1,145 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joao Benvenutti Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Joao Benvenutti — Data Science Portfolio</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Joao Benvenutti</h1>
+        <p class="role">Data Science • Computer Science</p>
+      </div>
 
-  <!-- Header / Hero -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Joao Benvenutti</h1>
-      <p>Data Science & Computer Science Student</p>
-      <a href="assets/resume.pdf" class="btn resume-btn" target="_blank">📄 Download Resume</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="tab-btn active" onclick="openTab('about', this)">About</button>
+        <button class="tab-btn" onclick="openTab('projects', this)">Projects</button>
+        <button class="tab-btn" onclick="openTab('resume', this)">Resume</button>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-outline" href="assets/resume.pdf" target="_blank" rel="noopener">View Resume</a>
+        <a class="icon-link" href="https://github.com/fragjo01" target="_blank" rel="noopener" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/joao-benvenutti-055585330/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- Navigation Tabs -->
-  <nav class="tabs-nav">
-    <button class="tab-btn active" onclick="openTab('about')">About Me</button>
-    <button class="tab-btn" onclick="openTab('projects')">Projects</button>
-    <button class="tab-btn" onclick="openTab('resume')">Resume</button>
-  </nav>
+  <main class="container">
 
-  <!-- About Me -->
-  <section id="about" class="tab-content active fade">
-    <div class="about-container">
-      <img src="assets/profile.jpg" alt="Joao Benvenutti" class="profile-pic">
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>Hi! I'm Joao Henrique Fraga Benvenutti, a Data Science major and Computer Science minor. I enjoy building data-driven projects, machine learning models, and interactive web applications.</p>
-      </div>
-    </div>
-  </section>
+    <!-- ABOUT -->
+    <section id="about" class="tab-content active" aria-labelledby="aboutTab">
+      <div class="about-grid">
+        <img class="profile" src="assets/profile.jpg" alt="Joao Benvenutti profile photo" />
 
-  <!-- Projects -->
-  <section id="projects" class="tab-content fade">
-    <h2>Projects</h2>
-    <div class="project-grid">
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p class="lead">
+            I am a Data Science major and Computer Science minor at Luther College. I build robust, production-minded analytics and machine learning solutions — from data cleaning and exploratory analysis to modeling and deployment. I focus on clarity, reproducibility, and business impact.
+          </p>
 
-      <!-- Project 1 -->
-      <div class="project-card">
-        <img src="assets/tennisproject/Screenshot 2025-11-28 at 13.59.51.png" class="thumb" onclick="openLightbox(0)">
-        <div class="project-info">
-          <h3>Tennis Match Data Analysis</h3>
-          <p>Analyzed historical tennis match data to identify player performance trends and predict outcomes using Python and Pandas.</p>
-          <span class="tech">Python, Pandas, Data Analysis, Visualization</span>
+          <ul class="about-list">
+            <li><strong>Education:</strong> Data Science Major, Computer Science Minor</li>
+            <li><strong>Tools:</strong> Python, SQL, Pandas, Scikit-learn, Flask, Git, Docker</li>
+            <li><strong>Interests:</strong> Predictive modeling, feature engineering, explainable ML</li>
+          </ul>
+
+          <div class="cta-group">
+            <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+            <a class="link-muted" href="mailto:fragjo01@luther.edu">fragjo01@luther.edu</a>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Project 2 -->
-      <div class="project-card">
-        <img src="assets/tennisproject/Screenshot 2025-11-28 at 13.59.59.png" class="thumb" onclick="openLightbox(1)">
-        <div class="project-info">
-          <h3>Tennis Stats Dashboard</h3>
-          <p>Developed an interactive web dashboard to visualize tennis statistics and player comparisons using Flask and JavaScript.</p>
-          <span class="tech">Flask, JavaScript, HTML/CSS</span>
-        </div>
+    <!-- PROJECTS (Single Tennis Project) -->
+    <section id="projects" class="tab-content" aria-label="Projects">
+      <div class="project-header">
+        <h2>Tennis Analytics — Case Study</h2>
+        <p class="project-sub">
+          End-to-end analysis of tennis match data: data cleaning, exploratory analysis, feature engineering, model building, and visual storytelling. Below are representative visual outputs and dashboard views.
+        </p>
       </div>
 
-      <!-- Project 3 -->
-      <div class="project-card">
-        <img src="assets/tennisproject/Screenshot 2025-11-28 at 14.00.07.png" class="thumb" onclick="openLightbox(2)">
-        <div class="project-info">
-          <h3>Predictive Tennis Model</h3>
-          <p>Built a predictive model to forecast match outcomes using machine learning techniques and performance metrics.</p>
-          <span class="tech">Python, Scikit-learn, Machine Learning</span>
+      <div class="project-body">
+        <div class="project-meta">
+          <h3 class="project-title">Tennis Match Data Analysis</h3>
+          <p>
+            Collected and processed match-level and point-level data to derive player performance metrics (serve %, return, rally length, winners/errors). Used Python (Pandas) for ETL, Matplotlib/Seaborn for visualizations, and scikit-learn for a baseline predictive model of match outcomes. Deliverables: reproducible notebooks, Flask dashboard, and a written report summarizing actionable insights.
+          </p>
+
+          <ul class="meta-list">
+            <li><strong>Role:</strong> Data Analyst & ML Engineer</li>
+            <li><strong>Duration:</strong> Mar 2025 — Nov 2025</li>
+            <li><strong>Tech:</strong> Python, Pandas, Scikit-learn, Flask, SQL, Docker</li>
+          </ul>
+
+          <div class="project-links">
+            <a class="btn btn-outline" href="https://github.com/fragjo01" target="_blank" rel="noopener">View Repo</a>
+            <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Project Report (PDF)</a>
+          </div>
+        </div>
+
+        <div class="gallery-panel">
+          <div class="gallery-grid">
+            <!-- each button opens the lightbox; filenames contain spaces so they are percent-encoded -->
+            <button class="thumb" onclick="openLightbox(0)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2013.59.51.png" alt="Tennis screenshot 1"></button>
+            <button class="thumb" onclick="openLightbox(1)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2013.59.59.png" alt="Tennis screenshot 2"></button>
+            <button class="thumb" onclick="openLightbox(2)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.07.png" alt="Tennis screenshot 3"></button>
+            <button class="thumb" onclick="openLightbox(3)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.24.png" alt="Tennis screenshot 4"></button>
+            <button class="thumb" onclick="openLightbox(4)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.32.png" alt="Tennis screenshot 5"></button>
+            <button class="thumb" onclick="openLightbox(5)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.40.png" alt="Tennis screenshot 6"></button>
+            <button class="thumb" onclick="openLightbox(6)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.49.png" alt="Tennis screenshot 7"></button>
+            <button class="thumb" onclick="openLightbox(7)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.56.png" alt="Tennis screenshot 8"></button>
+            <button class="thumb" onclick="openLightbox(8)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.01.04.png" alt="Tennis screenshot 9"></button>
+            <button class="thumb" onclick="openLightbox(9)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.01.12.png" alt="Tennis screenshot 10"></button>
+            <button class="thumb" onclick="openLightbox(10)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.01.21.png" alt="Tennis screenshot 11"></button>
+            <button class="thumb" onclick="openLightbox(11)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.01.40.png" alt="Tennis screenshot 12"></button>
+            <button class="thumb" onclick="openLightbox(12)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.02.17.png" alt="Tennis screenshot 13"></button>
+          </div>
         </div>
       </div>
+    </section>
 
-      <!-- Project 4 -->
-      <div class="project-card">
-        <img src="assets/tennisproject/Screenshot 2025-11-28 at 14.00.24.png" class="thumb" onclick="openLightbox(3)">
-        <div class="project-info">
-          <h3>Data Cleaning Pipeline</h3>
-          <p>Created a data cleaning and preprocessing pipeline for tennis match datasets to ensure accurate analysis and visualization.</p>
-          <span class="tech">Python, Pandas, Data Cleaning</span>
-        </div>
+    <!-- RESUME -->
+    <section id="resume" class="tab-content" aria-label="Resume">
+      <div class="resume-panel">
+        <h2>Resume</h2>
+        <p class="lead">Download my resume for details on education, coursework, and project experience.</p>
+        <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a>
       </div>
+    </section>
+  </main>
 
-    </div>
-  </section>
-
-  <!-- Resume -->
-  <section id="resume" class="tab-content fade">
-    <h2>Resume</h2>
-    <p>Click below to view or download my resume:</p>
-    <a href="assets/resume.pdf" class="btn resume-btn" target="_blank">📄 View / Download Resume</a>
-  </section>
-
-  <!-- Lightbox -->
-  <div id="lightbox" onclick="closeLightbox()">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" id="lightbox-img">
-    <button class="prev" onclick="prevSlide(event)">&#10094;</button>
-    <button class="next" onclick="nextSlide(event)">&#10095;</button>
+  <!-- Lightbox (overlay) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true" onclick="closeLightbox()">
+    <button class="lightbox-close" aria-label="Close" onclick="closeLightbox(event)">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous" onclick="prevSlide(event)"><i class="fas fa-chevron-left"></i></button>
+    <img id="lightboxImage" class="lightbox-image" alt="">
+    <button class="lightbox-next" aria-label="Next" onclick="nextSlide(event)"><i class="fas fa-chevron-right"></i></button>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="social-icons">
-      <a href="https://github.com/fragjo01" target="_blank">
-        <img src="assets/icons/github.svg" alt="GitHub">
-      </a>
-      <a href="https://www.linkedin.com/in/joao-benvenutti-055585330/" target="_blank">
-        <img src="assets/icons/linkedin.svg" alt="LinkedIn">
-      </a>
-      <a href="mailto:fragjo01@luther.edu">
-        <img src="assets/icons/email.svg" alt="Email">
-      </a>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> Joao Benvenutti</div>
+      <div class="footer-links">
+        <a href="https://github.com/fragjo01" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/joao-benvenutti-055585330/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="mailto:fragjo01@luther.edu"><i class="fa fa-envelope"></i> Email</a>
+      </div>
     </div>
-    <p>&copy; 2025 Joao Benvenutti</p>
   </footer>
 
   <script src="script.js"></script>
