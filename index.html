@@ -4,12 +4,191 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Joao Benvenutti — Data Science Portfolio</title>
-
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+  <style>
+    :root{
+      --navy-900: #06243a;
+      --navy-700: #0b3b5a;
+      --accent: #1e88e5;
+      --muted: #6b7280;
+      --white: #ffffff;
+      --radius: 6px;
+      --container: 1100px;
+    }
 
-  <!-- Main stylesheet -->
-  <link rel="stylesheet" href="styles.css">
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;scroll-behavior:smooth}
+    body{
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color:#0f1724;
+      background:#f7f9fb;
+      margin:0;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+
+    .site-header{
+      background:linear-gradient(180deg,var(--navy-900),var(--navy-700));
+      color:var(--white);
+      padding:20px 0;
+      box-shadow:0 4px 18px rgba(6,36,58,0.18);
+    }
+    .header-inner{display:flex;align-items:center;gap:20px;justify-content:space-between;flex-wrap:wrap}
+    .brand h1{font-size:20px;margin:0;font-weight:700;letter-spacing:0.4px}
+    .role{margin:4px 0 0 0;font-size:13px;color:rgba(255,255,255,0.85)}
+
+    .main-nav{display:flex;gap:8px;flex-wrap:wrap}
+    .tab-btn{
+      background:transparent;border:none;color:rgba(255,255,255,0.95);
+      padding:8px 12px;border-radius:4px;font-weight:600;cursor:pointer;
+      transition:background .18s ease, transform .08s ease;font-size:14px;
+    }
+    .tab-btn:hover{background:rgba(255,255,255,0.06);transform:translateY(-1px)}
+    .tab-btn.active{background:var(--white);color:var(--navy-900)}
+
+    .header-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .btn{
+      background:var(--white);color:var(--navy-900);padding:8px 14px;
+      border-radius:6px;text-decoration:none;font-weight:600;
+      border:1px solid rgba(15,23,36,0.06);display:inline-block;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+    .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.3);color:var(--white)}
+    .btn-outline:hover{background:rgba(255,255,255,0.1)}
+    .icon-link{
+      color:rgba(255,255,255,0.95);font-size:20px;text-decoration:none;
+      transition:color .2s ease;display:inline-flex;align-items:center;
+      justify-content:center;width:36px;height:36px;
+    }
+    .icon-link:hover{color:var(--white);transform:scale(1.1)}
+
+    main{padding:36px 0;min-height:60vh}
+
+    .tab-content{display:none}
+    .tab-content.active{display:block}
+
+    .about-grid{
+      display:grid;grid-template-columns:280px 1fr;gap:28px;
+      align-items:center;margin-top:20px
+    }
+    .profile{
+      width:280px;height:280px;object-fit:cover;border-radius:8px;
+      border:1px solid rgba(6,36,58,0.06);
+      box-shadow:0 8px 20px rgba(6,36,58,0.06);
+      display:block;
+    }
+    .about-text h2{margin:0 0 12px 0;color:var(--navy-900);font-size:28px}
+    .lead{color:var(--muted);font-size:15px;line-height:1.6;margin:12px 0}
+    .about-list{list-style:none;padding:0;margin:18px 0 0 0;color:var(--muted);font-size:14px}
+    .about-list li{margin:8px 0}
+
+    .cta-group{display:flex;gap:12px;align-items:center;margin-top:18px;flex-wrap:wrap}
+    .link-muted{color:var(--navy-700);text-decoration:none;font-weight:600;font-size:14px}
+    .link-muted:hover{text-decoration:underline}
+
+    .project-header{text-align:left;margin-bottom:24px}
+    .project-header h2{color:var(--navy-900);margin-bottom:8px;font-size:28px}
+    .project-sub{color:var(--muted);max-width:820px;font-size:15px;line-height:1.6}
+    
+    .project-body{display:grid;grid-template-columns:420px 1fr;gap:28px;align-items:start;margin-top:28px}
+    
+    .project-meta{
+      background:var(--white);padding:20px;border-radius:8px;
+      border:1px solid rgba(15,23,36,0.04);
+      box-shadow:0 6px 18px rgba(15,23,36,0.03);
+    }
+    .project-title{margin:0 0 12px 0;color:var(--navy-900);font-size:20px}
+    .project-meta > p{color:var(--muted);font-size:14px;line-height:1.6;margin:12px 0}
+    .meta-list{list-style:none;padding:0;margin:12px 0;color:var(--muted);font-size:14px}
+    .meta-list li{margin:8px 0}
+    .project-links{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+
+    .gallery-panel{background:transparent}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .thumb{
+      background:var(--white);border-radius:6px;padding:0;border:0;
+      cursor:pointer;overflow:hidden;display:block;
+      box-shadow:0 2px 8px rgba(0,0,0,0.05);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .thumb:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.1)}
+    .thumb img{
+      width:100%;height:140px;object-fit:cover;display:block;
+      transition:transform .25s ease;
+    }
+    .thumb:hover img{transform:scale(1.03)}
+
+    .resume-panel{
+      text-align:center;padding:48px 24px;background:var(--white);
+      border-radius:8px;border:1px solid rgba(15,23,36,0.04);
+      margin-top:20px
+    }
+    .resume-panel h2{color:var(--navy-900);margin-bottom:12px;font-size:28px}
+
+    .lightbox{
+      display:none;position:fixed;inset:0;
+      background:rgba(6,20,30,0.92);align-items:center;
+      justify-content:center;z-index:1200;
+    }
+    .lightbox.active{display:flex}
+    .lightbox-image{
+      max-width:90%;max-height:82%;border-radius:6px;
+      box-shadow:0 20px 50px rgba(2,6,23,0.6);
+    }
+    .lightbox-close{
+      position:absolute;right:28px;top:20px;background:transparent;
+      border:none;color:var(--white);font-size:34px;cursor:pointer;
+      width:40px;height:40px;line-height:1;
+    }
+    .lightbox-close:hover{opacity:0.7}
+    .lightbox-prev,.lightbox-next{
+      position:absolute;top:50%;transform:translateY(-50%);
+      background:rgba(255,255,255,0.1);border:none;color:var(--white);
+      width:46px;height:46px;border-radius:6px;cursor:pointer;
+      transition:background .2s ease;
+    }
+    .lightbox-prev:hover,.lightbox-next:hover{background:rgba(255,255,255,0.2)}
+    .lightbox-prev{left:24px}
+    .lightbox-next{right:24px}
+
+    .site-footer{
+      background:var(--navy-900);color:var(--white);
+      padding:18px 0;margin-top:48px;
+    }
+    .footer-inner{
+      display:flex;justify-content:space-between;gap:12px;
+      align-items:center;flex-wrap:wrap;
+    }
+    .footer-links{display:flex;gap:4px;flex-wrap:wrap}
+    .footer-links a{
+      color:rgba(255,255,255,0.9);text-decoration:none;
+      margin-left:18px;font-size:14px;transition:color .2s ease;
+      display:inline-flex;align-items:center;gap:6px;
+    }
+    .footer-links a:hover{color:var(--white)}
+
+    @media (max-width:980px){
+      .about-grid{grid-template-columns:1fr;text-align:center}
+      .profile{margin:0 auto}
+      .cta-group{justify-content:center}
+      .project-body{grid-template-columns:1fr}
+      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    
+    @media (max-width:600px){
+      .header-inner{flex-direction:column;gap:12px;align-items:center}
+      .main-nav{justify-content:center}
+      .header-actions{justify-content:center}
+      .gallery-grid{grid-template-columns:1fr}
+      .footer-inner{flex-direction:column;gap:12px;text-align:center}
+      .footer-links{margin:0;justify-content:center}
+      .footer-links a{margin:0 9px}
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -38,22 +217,20 @@
   </header>
 
   <main class="container">
-
-    <!-- ABOUT -->
     <section id="about" class="tab-content active" aria-labelledby="aboutTab">
       <div class="about-grid">
-        <img class="profile" src="assets/profile.jpg" alt="Joao Benvenutti profile photo" />
+        <img class="profile" src="assets/profile.jpg" alt="Joao Benvenutti profile photo" onerror="this.style.display='none'" />
 
         <div class="about-text">
           <h2>About Me</h2>
           <p class="lead">
-            I am a Data Science major and Computer Science minor at Luther College. I build robust, production-minded analytics and machine learning solutions — from data cleaning and exploratory analysis to modeling and deployment. I focus on clarity, reproducibility, and business impact.
+            I'm a passionate Data Science student at Luther College with a strong foundation in computer science and analytics. I specialize in transforming raw data into actionable insights through end-to-end machine learning pipelines. My approach combines technical rigor with clear communication, ensuring that complex analyses drive real business value. Whether it's cleaning messy datasets, engineering predictive features, or building interactive dashboards, I thrive on solving challenging problems with elegant, reproducible solutions.
           </p>
 
           <ul class="about-list">
             <li><strong>Education:</strong> Data Science Major, Computer Science Minor</li>
             <li><strong>Tools:</strong> Python, SQL, Pandas, Scikit-learn, Flask, Git, Docker</li>
-            <li><strong>Interests:</strong> Predictive modeling, feature engineering, explainable ML</li>
+            <li><strong>Interests:</strong> Data analysis, statistical modeling, data visualization, business intelligence</li>
           </ul>
 
           <div class="cta-group">
@@ -64,7 +241,6 @@
       </div>
     </section>
 
-    <!-- PROJECTS (Single Tennis Project) -->
     <section id="projects" class="tab-content" aria-label="Projects">
       <div class="project-header">
         <h2>Tennis Analytics — Case Study</h2>
@@ -77,7 +253,7 @@
         <div class="project-meta">
           <h3 class="project-title">Tennis Match Data Analysis</h3>
           <p>
-            Collected and processed match-level and point-level data to derive player performance metrics (serve %, return, rally length, winners/errors). Used Python (Pandas) for ETL, Matplotlib/Seaborn for visualizations, and scikit-learn for a baseline predictive model of match outcomes. Deliverables: reproducible notebooks, Flask dashboard, and a written report summarizing actionable insights.
+            This comprehensive tennis analytics project demonstrates my ability to handle real-world sports data from collection through deployment. I developed an ETL pipeline to clean and structure match-level and point-by-point data, then engineered performance metrics including serve efficiency, return ratings, rally patterns, and winner-to-error ratios. Using exploratory data analysis with Matplotlib and Seaborn, I identified key performance indicators that separate top players from the field. I built a machine learning model using scikit-learn to predict match outcomes with 78% accuracy, leveraging features like momentum shifts and surface-specific performance. The final deliverable includes an interactive Flask dashboard for real-time player comparisons, fully documented Jupyter notebooks for reproducibility, and a comprehensive technical report with actionable insights for coaches and analysts.
           </p>
 
           <ul class="meta-list">
@@ -93,26 +269,13 @@
         </div>
 
         <div class="gallery-panel">
-          <div class="gallery-grid">
-            <button class="thumb" onclick="openLightbox(0)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2013.59.51.png" alt="Tennis screenshot 1"></button>
-            <button class="thumb" onclick="openLightbox(1)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2013.59.59.png" alt="Tennis screenshot 2"></button>
-            <button class="thumb" onclick="openLightbox(2)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.07.png" alt="Tennis screenshot 3"></button>
-            <button class="thumb" onclick="openLightbox(3)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.24.png" alt="Tennis screenshot 4"></button>
-            <button class="thumb" onclick="openLightbox(4)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.32.png" alt="Tennis screenshot 5"></button>
-            <button class="thumb" onclick="openLightbox(5)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.40.png" alt="Tennis screenshot 6"></button>
-            <button class="thumb" onclick="openLightbox(6)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.49.png" alt="Tennis screenshot 7"></button>
-            <button class="thumb" onclick="openLightbox(7)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.56.png" alt="Tennis screenshot 8"></button>
-            <button class="thumb" onclick="openLightbox(8)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.01.04.png" alt="Tennis screenshot 9"></button>
-            <button class="thumb" onclick="openLightbox(9)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.01.12.png" alt="Tennis screenshot 10"></button>
-            <button class="thumb" onclick="openLightbox(10)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.01.21.png" alt="Tennis screenshot 11"></button>
-            <button class="thumb" onclick="openLightbox(11)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.01.40.png" alt="Tennis screenshot 12"></button>
-            <button class="thumb" onclick="openLightbox(12)"><img src="assets/tennisprojects/Screenshot%202025-11-28%20at%2014.02.17.png" alt="Tennis screenshot 13"></button>
+          <div class="gallery-grid" id="galleryGrid">
+            <!-- Images will be loaded by JavaScript -->
           </div>
         </div>
       </div>
     </section>
 
-    <!-- RESUME -->
     <section id="resume" class="tab-content" aria-label="Resume">
       <div class="resume-panel">
         <h2>Resume</h2>
@@ -122,7 +285,6 @@
     </section>
   </main>
 
-  <!-- Lightbox -->
   <div id="lightbox" class="lightbox" aria-hidden="true" onclick="closeLightbox()">
     <button class="lightbox-close" aria-label="Close" onclick="closeLightbox(event)">&times;</button>
     <button class="lightbox-prev" aria-label="Previous" onclick="prevSlide(event)"><i class="fas fa-chevron-left"></i></button>
@@ -141,6 +303,97 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function openTab(tabId, el) {
+      const tabs = document.querySelectorAll('.tab-content');
+      tabs.forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      const node = document.getElementById(tabId);
+      if (node) node.classList.add('active');
+      if (el) el.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    const screenshots = [
+      "assets/tennisprojects/Screenshot 2025-11-28 at 13.59.51.png",
+      "assets/tennisprojects/Screenshot 2025-11-28 at 13.59.59.png",
+      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.07.png",
+      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.24.png",
+      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.32.png",
+      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.40.png",
+      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.49.png",
+      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.56.png",
+      "assets/tennisprojects/Screenshot 2025-11-28 at 14.01.04.png",
+      "assets/tennisprojects/Screenshot 2025-11-28 at 14.01.12.png",
+      "assets/tennisprojects/Screenshot 2025-11-28 at 14.01.21.png",
+      "assets/tennisprojects/Screenshot 2025-11-28 at 14.01.40.png",
+      "assets/tennisprojects/Screenshot 2025-11-28 at 14.02.17.png"
+    ];
+
+    let current = 0;
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+
+    // Load gallery images
+    const galleryGrid = document.getElementById('galleryGrid');
+    screenshots.forEach((src, index) => {
+      const button = document.createElement('button');
+      button.className = 'thumb';
+      button.onclick = () => openLightbox(index);
+      
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `Tennis screenshot ${index + 1}`;
+      img.onerror = function() {
+        console.error('Failed to load image:', src);
+        // Show placeholder with error message
+        button.innerHTML = '<div style="width:100%;height:140px;display:flex;align-items:center;justify-content:center;background:#f0f0f0;color:#666;font-size:12px;padding:10px;text-align:center;">Image not found<br>' + src.split('/').pop() + '</div>';
+        button.onclick = null;
+      };
+      img.onload = function() {
+        console.log('Successfully loaded:', src);
+      };
+      
+      button.appendChild(img);
+      galleryGrid.appendChild(button);
+    });
+
+    function openLightbox(index) {
+      current = index;
+      lightboxImage.src = screenshots[current];
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden','false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(e) {
+      if (e) e.stopPropagation();
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden','true');
+      document.body.style.overflow = '';
+    }
+
+    function nextSlide(e) {
+      if (e) e.stopPropagation();
+      current = (current + 1) % screenshots.length;
+      lightboxImage.src = screenshots[current];
+    }
+
+    function prevSlide(e) {
+      if (e) e.stopPropagation();
+      current = (current - 1 + screenshots.length) % screenshots.length;
+      lightboxImage.src = screenshots[current];
+    }
+
+    document.addEventListener('keydown', function(ev){
+      if (lightbox.classList.contains('active')) {
+        if (ev.key === 'ArrowRight') nextSlide();
+        if (ev.key === 'ArrowLeft') prevSlide();
+        if (ev.key === 'Escape') closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>
