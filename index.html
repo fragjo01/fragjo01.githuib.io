@@ -73,7 +73,7 @@
 
     .about-grid{
       display:grid;grid-template-columns:280px 1fr;gap:28px;
-      align-items:center;margin-top:20px
+      align-items:start;margin-top:20px
     }
     .profile{
       width:280px;height:280px;object-fit:cover;border-radius:8px;
@@ -94,12 +94,13 @@
     .project-header h2{color:var(--navy-900);margin-bottom:8px;font-size:28px}
     .project-sub{color:var(--muted);max-width:820px;font-size:15px;line-height:1.6}
     
-    .project-body{display:grid;grid-template-columns:420px 1fr;gap:28px;align-items:start;margin-top:28px}
+    .project-body{display:grid;grid-template-columns:1fr;gap:28px;margin-top:28px}
     
     .project-meta{
       background:var(--white);padding:20px;border-radius:8px;
       border:1px solid rgba(15,23,36,0.04);
       box-shadow:0 6px 18px rgba(15,23,36,0.03);
+      max-width:100%;
     }
     .project-title{margin:0 0 12px 0;color:var(--navy-900);font-size:20px}
     .project-meta > p{color:var(--muted);font-size:14px;line-height:1.6;margin:12px 0}
@@ -107,8 +108,8 @@
     .meta-list li{margin:8px 0}
     .project-links{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
 
-    .gallery-panel{background:transparent}
-    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .gallery-panel{background:transparent;margin-top:24px}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
     .thumb{
       background:var(--white);border-radius:6px;padding:0;border:0;
       cursor:pointer;overflow:hidden;display:block;
@@ -117,7 +118,7 @@
     }
     .thumb:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.1)}
     .thumb img{
-      width:100%;height:140px;object-fit:cover;display:block;
+      width:100%;height:180px;object-fit:cover;display:block;
       transition:transform .25s ease;
     }
     .thumb:hover img{transform:scale(1.03)}
@@ -175,8 +176,7 @@
       .about-grid{grid-template-columns:1fr;text-align:center}
       .profile{margin:0 auto}
       .cta-group{justify-content:center}
-      .project-body{grid-template-columns:1fr}
-      .gallery-grid{grid-template-columns:repeat(2,1fr)}
+      .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
     }
     
     @media (max-width:600px){
@@ -205,7 +205,7 @@
       </nav>
 
       <div class="header-actions">
-        <a class="btn btn-outline" href="assets/resume.pdf" target="_blank" rel="noopener">View Resume</a>
+        <a class="btn btn-outline" href="resume.pdf" target="_blank" rel="noopener">View Resume</a>
         <a class="icon-link" href="https://github.com/fragjo01" target="_blank" rel="noopener" aria-label="GitHub">
           <i class="fab fa-github"></i>
         </a>
@@ -219,7 +219,7 @@
   <main class="container">
     <section id="about" class="tab-content active" aria-labelledby="aboutTab">
       <div class="about-grid">
-        <img class="profile" src="assets/profile.jpg" alt="Joao Benvenutti profile photo" onerror="this.style.display='none'" />
+        <img class="profile" src="profile.jpeg" alt="Joao Benvenutti profile photo" onerror="this.style.display='none'" />
 
         <div class="about-text">
           <h2>About Me</h2>
@@ -234,7 +234,7 @@
           </ul>
 
           <div class="cta-group">
-            <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+            <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download Resume</a>
             <a class="link-muted" href="mailto:fragjo01@luther.edu">fragjo01@luther.edu</a>
           </div>
         </div>
@@ -264,7 +264,7 @@
 
           <div class="project-links">
             <a class="btn btn-outline" href="https://github.com/fragjo01" target="_blank" rel="noopener">View Repo</a>
-            <a class="btn" href="assets/tennisprojects/project1.html" target="_blank" rel="noopener">Project Report</a>
+            <a class="btn" href="project1.html" target="_blank" rel="noopener">Project Report</a>
           </div>
         </div>
 
@@ -280,7 +280,7 @@
       <div class="resume-panel">
         <h2>Resume</h2>
         <p class="lead">Download my resume for details on education, coursework, and project experience.</p>
-        <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a>
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a>
       </div>
     </section>
   </main>
@@ -317,19 +317,19 @@
     }
 
     const screenshots = [
-      "assets/tennisprojects/Screenshot 2025-11-28 at 13.59.51.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 13.59.59.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.07.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.24.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.32.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.40.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.49.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.56.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.01.04.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.01.12.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.01.21.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.01.40.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.02.17.png"
+      "Screenshot 2025-11-28 at 13.59.51.png",
+      "Screenshot 2025-11-28 at 13.59.59.png",
+      "Screenshot 2025-11-28 at 14.00.07.png",
+      "Screenshot 2025-11-28 at 14.00.24.png",
+      "Screenshot 2025-11-28 at 14.00.32.png",
+      "Screenshot 2025-11-28 at 14.00.40.png",
+      "Screenshot 2025-11-28 at 14.00.49.png",
+      "Screenshot 2025-11-28 at 14.00.56.png",
+      "Screenshot 2025-11-28 at 14.01.04.png",
+      "Screenshot 2025-11-28 at 14.01.12.png",
+      "Screenshot 2025-11-28 at 14.01.21.png",
+      "Screenshot 2025-11-28 at 14.01.40.png",
+      "Screenshot 2025-11-28 at 14.02.17.png"
     ];
 
     let current = 0;
@@ -348,8 +348,7 @@
       img.alt = `Tennis screenshot ${index + 1}`;
       img.onerror = function() {
         console.error('Failed to load image:', src);
-        // Show placeholder with error message
-        button.innerHTML = '<div style="width:100%;height:140px;display:flex;align-items:center;justify-content:center;background:#f0f0f0;color:#666;font-size:12px;padding:10px;text-align:center;">Image not found<br>' + src.split('/').pop() + '</div>';
+        button.innerHTML = '<div style="width:100%;height:180px;display:flex;align-items:center;justify-content:center;background:#f0f0f0;color:#666;font-size:12px;padding:10px;text-align:center;">Image not found<br>' + src + '</div>';
         button.onclick = null;
       };
       img.onload = function() {
