@@ -7,354 +7,365 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-  :root{
-    --navy-900: #06243a;
-    --navy-700: #0b3b5a;
-    --accent: #1e88e5;
-    --muted: #6b7280;
-    --white: #ffffff;
-    --radius: 6px;
-    --container: 1100px;
-  }
+:root{
+  --navy-900: #06243a;
+  --navy-700: #0b3b5a;
+  --accent: #1e88e5;
+  --muted: #6b7280;
+  --white: #ffffff;
+  --radius: 6px;
+  --container: 1100px;
+}
 
-  *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%;scroll-behavior:smooth}
-  body{
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-    color:#0f1724;
-    background:#f7f9fb;
-    margin:0;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-  }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;scroll-behavior:smooth}
+body{
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  color:#0f1724;
+  background:#f7f9fb;
+  margin:0;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
 
-  .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
 
-  .site-header{
-    background:linear-gradient(180deg,var(--navy-900),var(--navy-700));
-    color:var(--white);
-    padding:20px 0;
-    box-shadow:0 4px 18px rgba(6,36,58,0.18);
-  }
-  .header-inner{display:flex;align-items:center;gap:20px;justify-content:space-between;flex-wrap:wrap}
-  .brand h1{font-size:20px;margin:0;font-weight:700;letter-spacing:0.4px}
-  .role{margin:4px 0 0 0;font-size:13px;color:rgba(255,255,255,0.85)}
+.site-header{
+  background:linear-gradient(180deg,var(--navy-900),var(--navy-700));
+  color:var(--white);
+  padding:20px 0;
+  box-shadow:0 4px 18px rgba(6,36,58,0.18);
+}
+.header-inner{display:flex;align-items:center;gap:20px;justify-content:space-between;flex-wrap:wrap}
+.brand h1{font-size:20px;margin:0;font-weight:700;letter-spacing:0.4px}
+.role{margin:4px 0 0 0;font-size:13px;color:rgba(255,255,255,0.85)}
 
-  .main-nav{display:flex;gap:8px;flex-wrap:wrap}
-  .tab-btn{
-    background:transparent;border:none;color:rgba(255,255,255,0.95);
-    padding:8px 12px;border-radius:4px;font-weight:600;cursor:pointer;
-    transition:background .18s ease, transform .08s ease;font-size:14px;
-  }
-  .tab-btn:hover{background:rgba(255,255,255,0.06);transform:translateY(-1px)}
-  .tab-btn.active{background:var(--white);color:var(--navy-900)}
+.main-nav{display:flex;gap:8px;flex-wrap:wrap}
+.tab-btn{
+  background:transparent;border:none;color:rgba(255,255,255,0.95);
+  padding:8px 12px;border-radius:4px;font-weight:600;cursor:pointer;
+  transition:background .18s ease, transform .08s ease;font-size:14px;
+}
+.tab-btn:hover{background:rgba(255,255,255,0.06);transform:translateY(-1px)}
+.tab-btn.active{background:var(--white);color:var(--navy-900)}
 
-  .header-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-  .btn{
-    background:var(--white);color:var(--navy-900);padding:8px 14px;
-    border-radius:6px;text-decoration:none;font-weight:600;
-    border:1px solid rgba(15,23,36,0.06);display:inline-block;
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.1)}
-  .btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.3);color:var(--white)}
-  .btn-outline:hover{background:rgba(255,255,255,0.1)}
-  .icon-link{
-    color:rgba(255,255,255,0.95);font-size:20px;text-decoration:none;
-    transition:color .2s ease;display:inline-flex;align-items:center;
-    justify-content:center;width:36px;height:36px;
-  }
-  .icon-link:hover{color:var(--white);transform:scale(1.1)}
+.header-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.btn{
+  background:var(--white);color:var(--navy-900);padding:8px 14px;
+  border-radius:6px;text-decoration:none;font-weight:600;
+  border:1px solid rgba(15,23,36,0.06);display:inline-block;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.1)}
+.btn-outline{background:transparent;border:1px solid rgba(255,255,255,0.3);color:var(--white)}
+.btn-outline:hover{background:rgba(255,255,255,0.1)}
+.icon-link{
+  color:rgba(255,255,255,0.95);font-size:20px;text-decoration:none;
+  transition:color .2s ease;display:inline-flex;align-items:center;
+  justify-content:center;width:36px;height:36px;
+}
+.icon-link:hover{color:var(--white);transform:scale(1.1)}
 
-  main{padding:36px 0;min-height:60vh}
+main{padding:36px 0;min-height:60vh}
 
-  .tab-content{display:none}
-  .tab-content.active{display:block}
+.tab-content{display:none}
+.tab-content.active{display:block}
 
-  .about-grid{
-    display:grid;grid-template-columns:280px 1fr;gap:28px;
-    align-items:center;margin-top:20px
-  }
-  .profile{
-    width:280px;height:280px;object-fit:cover;border-radius:8px;
-    border:1px solid rgba(6,36,58,0.06);
-    box-shadow:0 8px 20px rgba(6,36,58,0.06);
-    display:block;
-  }
-  .about-text h2{margin:0 0 12px 0;color:var(--navy-900);font-size:28px}
-  .lead{color:var(--muted);font-size:15px;line-height:1.6;margin:12px 0}
-  .about-list{list-style:none;padding:0;margin:18px 0 0 0;color:var(--muted);font-size:14px}
-  .about-list li{margin:8px 0}
+.about-grid{
+  display:grid;grid-template-columns:280px 1fr;gap:28px;
+  align-items:center;margin-top:20px
+}
+.profile{
+  width:280px;height:280px;object-fit:cover;border-radius:8px;
+  border:1px solid rgba(6,36,58,0.06);
+  box-shadow:0 8px 20px rgba(6,36,58,0.06);
+  display:block;
+}
+.about-text h2{margin:0 0 12px 0;color:var(--navy-900);font-size:28px}
+.lead{color:var(--muted);font-size:15px;line-height:1.6;margin:12px 0}
+.about-list{list-style:none;padding:0;margin:18px 0 0 0;color:var(--muted);font-size:14px}
+.about-list li{margin:8px 0}
 
-  .cta-group{display:flex;gap:12px;align-items:center;margin-top:18px;flex-wrap:wrap}
-  .link-muted{color:var(--navy-700);text-decoration:none;font-weight:600;font-size:14px}
-  .link-muted:hover{text-decoration:underline}
+.cta-group{display:flex;gap:12px;align-items:center;margin-top:18px;flex-wrap:wrap}
+.link-muted{color:var(--navy-700);text-decoration:none;font-weight:600;font-size:14px}
+.link-muted:hover{text-decoration:underline}
 
-  .project-header{text-align:left;margin-bottom:24px}
-  .project-header h2{color:var(--navy-900);margin-bottom:8px;font-size:28px}
-  .project-sub{color:var(--muted);max-width:820px;font-size:15px;line-height:1.6}
+.project-header{text-align:left;margin-bottom:24px}
+.project-header h2{color:var(--navy-900);margin-bottom:8px;font-size:28px}
+.project-sub{color:var(--muted);max-width:820px;font-size:15px;line-height:1.6}
 
-  .project-body{display:grid;grid-template-columns:1fr;gap:28px;margin-top:28px}
+.project-body{display:grid;grid-template-columns:1fr;gap:28px;margin-top:28px}
 
-  .project-meta{
-    background:var(--white);padding:20px;border-radius:8px;
-    border:1px solid rgba(15,23,36,0.04);
-    box-shadow:0 6px 18px rgba(15,23,36,0.03);
-    max-width:100%;
-  }
-  .project-title{margin:0 0 12px 0;color:var(--navy-900);font-size:20px}
-  .project-meta > p{color:var(--muted);font-size:14px;line-height:1.6;margin:12px 0}
-  .meta-list{list-style:none;padding:0;margin:12px 0;color:var(--muted);font-size:14px}
-  .meta-list li{margin:8px 0}
-  .project-links{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+.project-meta{
+  background:var(--white);padding:20px;border-radius:8px;
+  border:1px solid rgba(15,23,36,0.04);
+  box-shadow:0 6px 18px rgba(15,23,36,0.03);
+  max-width:100%;
+}
+.project-title{margin:0 0 12px 0;color:var(--navy-900);font-size:20px}
+.project-meta > p{color:var(--muted);font-size:14px;line-height:1.6;margin:12px 0}
+.meta-list{list-style:none;padding:0;margin:12px 0;color:var(--muted);font-size:14px}
+.meta-list li{margin:8px 0}
+.project-links{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
 
-  .gallery-panel{background:transparent;margin-top:24px}
-  .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
-  .thumb{
-    background:var(--white);border-radius:6px;padding:0;border:0;
-    cursor:pointer;overflow:hidden;display:block;
-    box-shadow:0 2px 8px rgba(0,0,0,0.05);
-    transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .thumb:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.1)}
-  .thumb img{
-    width:100%;height:180px;object-fit:cover;display:block;
-    transition:transform .25s ease;
-  }
-  .thumb:hover img{transform:scale(1.03)}
+.gallery-panel{background:transparent;margin-top:24px}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.thumb{
+  background:var(--white);border-radius:6px;padding:0;border:0;
+  cursor:pointer;overflow:hidden;display:block;
+  box-shadow:0 2px 8px rgba(0,0,0,0.05);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.thumb:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.1)}
+.thumb img{
+  width:100%;height:180px;object-fit:cover;display:block;
+  transition:transform .25s ease;
+}
+.thumb:hover img{transform:scale(1.03)}
 
-  .resume-panel{
-    text-align:center;padding:48px 24px;background:var(--white);
-    border-radius:8px;border:1px solid rgba(15,23,36,0.04);
-    margin-top:20px
-  }
-  .resume-panel h2{color:var(--navy-900);margin-bottom:12px;font-size:28px}
+.pdf-card{
+  background:#f7f7f7;
+  border:1px solid #ddd;
+  border-radius:6px;
+  padding:12px;
+  font-size:14px;
+  text-align:center;
+}
+.pdf-card a{
+  text-decoration:none;
+  color:var(--navy-900);
+  font-weight:600;
+}
 
-  .pdf-card{
-    padding:12px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    background:#f9f9f9;
-    text-align:center;
-    margin-bottom:8px;
-  }
-  .pdf-card a{
-    text-decoration:none;
-    font-weight:600;
-    color:#0b3b5a;
-  }
+.resume-panel{
+  text-align:center;padding:48px 24px;background:var(--white);
+  border-radius:8px;border:1px solid rgba(15,23,36,0.04);
+  margin-top:20px
+}
+.resume-panel h2{color:var(--navy-900);margin-bottom:12px;font-size:28px}
 
-  .lightbox{
-    display:none;position:fixed;inset:0;
-    background:rgba(6,20,30,0.92);align-items:center;
-    justify-content:center;z-index:1200;
-  }
-  .lightbox.active{display:flex}
-  .lightbox-image{
-    max-width:90%;max-height:82%;border-radius:6px;
-    box-shadow:0 20px 50px rgba(2,6,23,0.6);
-  }
-  .lightbox-close{
-    position:absolute;right:28px;top:20px;background:transparent;
-    border:none;color:var(--white);font-size:34px;cursor:pointer;
-    width:40px;height:40px;line-height:1;
-  }
-  .lightbox-close:hover{opacity:0.7}
-  .lightbox-prev,.lightbox-next{
-    position:absolute;top:50%;transform:translateY(-50%);
-    background:rgba(255,255,255,0.1);border:none;color:var(--white);
-    width:46px;height:46px;border-radius:6px;cursor:pointer;
-    transition:background .2s ease;
-  }
-  .lightbox-prev:hover,.lightbox-next:hover{background:rgba(255,255,255,0.2)}
-  .lightbox-prev{left:24px}
-  .lightbox-next{right:24px}
+.lightbox{
+  display:none;position:fixed;inset:0;
+  background:rgba(6,20,30,0.92);align-items:center;
+  justify-content:center;z-index:1200;
+}
+.lightbox.active{display:flex}
+.lightbox-image{
+  max-width:90%;max-height:82%;border-radius:6px;
+  box-shadow:0 20px 50px rgba(2,6,23,0.6);
+}
+.lightbox-close{
+  position:absolute;right:28px;top:20px;background:transparent;
+  border:none;color:var(--white);font-size:34px;cursor:pointer;
+  width:40px;height:40px;line-height:1;
+}
+.lightbox-close:hover{opacity:0.7}
+.lightbox-prev,.lightbox-next{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,0.1);border:none;color:var(--white);
+  width:46px;height:46px;border-radius:6px;cursor:pointer;
+  transition:background .2s ease;
+}
+.lightbox-prev:hover,.lightbox-next:hover{background:rgba(255,255,255,0.2)}
+.lightbox-prev{left:24px}
+.lightbox-next{right:24px}
 
-  .site-footer{
-    background:var(--navy-900);color:var(--white);
-    padding:18px 0;margin-top:48px;
-  }
-  .footer-inner{
-    display:flex;justify-content:space-between;gap:12px;
-    align-items:center;flex-wrap:wrap;
-  }
-  .footer-links{display:flex;gap:4px;flex-wrap:wrap}
-  .footer-links a{
-    color:rgba(255,255,255,0.9);text-decoration:none;
-    margin-left:18px;font-size:14px;transition:color .2s ease;
-    display:inline-flex;align-items:center;gap:6px;
-  }
-  .footer-links a:hover{color:var(--white)}
+.site-footer{
+  background:var(--navy-900);color:var(--white);
+  padding:18px 0;margin-top:48px;
+}
+.footer-inner{
+  display:flex;justify-content:space-between;gap:12px;
+  align-items:center;flex-wrap:wrap;
+}
+.footer-links{display:flex;gap:4px;flex-wrap:wrap}
+.footer-links a{
+  color:rgba(255,255,255,0.9);text-decoration:none;
+  margin-left:18px;font-size:14px;transition:color .2s ease;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.footer-links a:hover{color:var(--white)}
 
-  @media (max-width:980px){
-    .about-grid{grid-template-columns:1fr;text-align:center}
-    .profile{margin:0 auto}
-    .cta-group{justify-content:center}
-    .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
-  }
+@media (max-width:980px){
+  .about-grid{grid-template-columns:1fr;text-align:center}
+  .profile{margin:0 auto}
+  .cta-group{justify-content:center}
+  .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+}
 
-  @media (max-width:600px){
-    .header-inner{flex-direction:column;gap:12px;align-items:center}
-    .main-nav{justify-content:center}
-    .header-actions{justify-content:center}
-    .gallery-grid{grid-template-columns:1fr}
-    .footer-inner{flex-direction:column;gap:12px;text-align:center}
-    .footer-links{margin:0;justify-content:center}
-    .footer-links a{margin:0 9px}
-  }
+@media (max-width:600px){
+  .header-inner{flex-direction:column;gap:12px;align-items:center}
+  .main-nav{justify-content:center}
+  .header-actions{justify-content:center}
+  .gallery-grid{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;gap:12px;text-align:center}
+  .footer-links{margin:0;justify-content:center}
+  .footer-links a{margin:0 9px}
+}
 </style>
 </head>
 <body>
+
 <header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <h1>Joao Benvenutti</h1>
-      <p class="role">Data Science • Computer Science</p>
-    </div>
-
-    <nav class="main-nav" aria-label="Main navigation">
-      <button class="tab-btn active" onclick="openTab('about', this)">About</button>
-      <button class="tab-btn" onclick="openTab('projects', this)">Projects</button>
-      <button class="tab-btn" onclick="openTab('resume', this)">Resume</button>
-    </nav>
-
-    <div class="header-actions">
-      <a class="btn btn-outline" href="assets/resume.pdf" target="_blank" rel="noopener">View Resume</a>
-      <a class="icon-link" href="https://github.com/fragjo01" target="_blank" rel="noopener" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a class="icon-link" href="https://www.linkedin.com/in/joao-benvenutti-055585330/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    </div>
+<div class="container header-inner">
+  <div class="brand">
+    <h1>Joao Benvenutti</h1>
+    <p class="role">Data Science • Computer Science</p>
   </div>
+
+  <nav class="main-nav" aria-label="Main navigation">
+    <button class="tab-btn active" onclick="openTab('about', this)">About</button>
+    <button class="tab-btn" onclick="openTab('projects', this)">Projects</button>
+    <button class="tab-btn" onclick="openTab('resume', this)">Resume</button>
+  </nav>
+
+  <div class="header-actions">
+    <a class="btn btn-outline" href="assets/resume.pdf" target="_blank" rel="noopener">View Resume</a>
+    <a class="icon-link" href="https://github.com/fragjo01" target="_blank" rel="noopener" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+    <a class="icon-link" href="https://www.linkedin.com/in/joao-benvenutti-055585330/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <i class="fab fa-linkedin"></i>
+    </a>
+  </div>
+</div>
 </header>
 
 <main class="container">
-  <section id="about" class="tab-content active">
-    <div class="about-grid">
-      <img class="profile" src="assets/profile.jpeg" alt="Joao Benvenutti profile photo" onerror="this.style.display='none'" />
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p class="lead">
-          I'm a passionate Data Science student at Luther College with a strong foundation in computer science and analytics. I specialize in transforming raw data into actionable insights through end-to-end machine learning pipelines.
-        </p>
-        <ul class="about-list">
-          <li><strong>Education:</strong> Data Science Major, Computer Science Minor</li>
-          <li><strong>Tools:</strong> Python, SQL, R, CSS, Power BI, Tableau, HTML, JAVA, JavaScript, Data cleaning, Communication</li>
-          <li><strong>Interests:</strong> Data analysis, statistical modeling, data visualization</li>
-        </ul>
-        <div class="cta-group">
-          <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
-          <a class="link-muted" href="mailto:fragjo01@luther.edu">fragjo01@luther.edu</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ABOUT -->
+<section id="about" class="tab-content active" aria-labelledby="aboutTab">
+<div class="about-grid">
+<img class="profile" src="assets/profile.jpeg" alt="Joao Benvenutti profile photo" onerror="this.style.display='none'" />
 
-  <section id="projects" class="tab-content">
-    <div class="project-header">
-      <h2>Projects</h2>
-      <p class="project-sub">
-        A collection of data science and analytics projects showcasing end-to-end data pipelines, statistical modeling, and machine learning applications.
-      </p>
-    </div>
+<div class="about-text">
+<h2>About Me</h2>
+<p class="lead">
+I'm a passionate Data Science student at Luther College with a strong foundation in computer science and analytics. I specialize in transforming raw data into actionable insights through end-to-end machine learning pipelines. My approach combines technical rigor with clear communication, ensuring that complex analyses drive real business value. Whether it's cleaning messy datasets, engineering predictive features, or building interactive dashboards, I thrive on solving challenging problems with elegant, reproducible solutions.
+</p>
 
-    <!-- Tennis Project -->
-    <div class="project-body">
-      <div class="project-meta">
-        <h3 class="project-title">Tennis Analytics — Case Study</h3>
-        <p>
-          Comprehensive tennis analytics project demonstrating ETL pipelines, exploratory data analysis, feature engineering, and predictive modeling using Python and scikit-learn.
-        </p>
-        <ul class="meta-list">
-          <li><strong>Role:</strong> Data Analyst & ML Engineer</li>
-          <li><strong>Duration:</strong> Mar 2025 — Nov 2025</li>
-          <li><strong>Tech:</strong> Python, Pandas, Scikit-learn, Flask, SQL, Docker</li>
-        </ul>
-        <div class="project-links">
-          <a class="btn btn-outline" href="https://github.com/fragjo01" target="_blank" rel="noopener">View Repo</a>
-          <a class="btn" href="assets/tennisproject/project1.html" target="_blank" rel="noopener">Project Report</a>
-        </div>
-      </div>
-      <div class="gallery-panel">
-        <div class="gallery-grid" id="tennisGallery"></div>
-      </div>
-    </div>
+<ul class="about-list">
+  <li><strong>Education:</strong> Data Science Major, Computer Science Minor</li>
+  <li><strong>Tools:</strong> Python, SQL, Pandas, Scikit-learn, Flask, Git, Docker</li>
+  <li><strong>Interests:</strong> Data analysis, statistical modeling, data visualization, business intelligence</li>
+</ul>
 
-    <!-- Sports Car Project -->
-    <div class="project-body">
-      <div class="project-meta">
-        <h3 class="project-title">Sports Car Price Analysis</h3>
-        <p>
-          This project analyzes performance vs. price trade-offs in high-end sports cars using R, exploring horsepower, torque, and acceleration per dollar.
-        </p>
-        <ul class="meta-list">
-          <li><strong>Tools:</strong> R (tidyverse, ggplot2), Jupyter with R kernel</li>
-        </ul>
-      </div>
-      <div class="gallery-panel">
-        <div class="gallery-grid" id="sportsCarGallery"></div>
-      </div>
-    </div>
+<div class="cta-group">
+  <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+  <a class="link-muted" href="mailto:fragjo01@luther.edu">fragjo01@luther.edu</a>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- Stock Forecast Project -->
-    <div class="project-body">
-      <div class="project-meta">
-        <h3 class="project-title">Stock Forecast Project</h3>
-        <p>
-          Forecast stock prices using SQL, Python with Prophet, and Power BI for visualization. Focused on AAPL, MSFT, AMZN, and GOOGL.
-        </p>
-        <ul class="meta-list">
-          <li><strong>Tools:</strong> SQL, Python (Prophet), Power BI</li>
-        </ul>
-      </div>
-      <div class="gallery-panel">
-        <div class="gallery-grid" id="stockGallery"></div>
-      </div>
-    </div>
-  </section>
+<!-- PROJECTS -->
+<section id="projects" class="tab-content" aria-label="Projects">
 
-  <section id="resume" class="tab-content">
-    <div class="resume-panel">
-      <h2>Resume</h2>
-      <p class="lead">Download my resume for details on education, coursework, and project experience.</p>
-      <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a>
-    </div>
-  </section>
+<!-- Tennis Project -->
+<div class="project-header">
+<h2>Tennis Analytics — Case Study</h2>
+<p class="project-sub">End-to-end analysis of tennis match data: data cleaning, exploratory analysis, feature engineering, model building, and visual storytelling.</p>
+</div>
+
+<div class="project-body">
+<div class="project-meta">
+<h3 class="project-title">Tennis Match Data Analysis</h3>
+<p>This comprehensive tennis analytics project demonstrates my ability to handle real-world sports data from collection through deployment. I developed an ETL pipeline to clean and structure match-level and point-by-point data, then engineered performance metrics including serve efficiency, return ratings, rally patterns, and winner-to-error ratios. Using exploratory data analysis with Matplotlib and Seaborn, I identified key performance indicators that separate top players from the field. I built a machine learning model using scikit-learn to predict match outcomes with 78% accuracy, leveraging features like momentum shifts and surface-specific performance. The final deliverable includes an interactive Flask dashboard for real-time player comparisons, fully documented Jupyter notebooks for reproducibility, and a comprehensive technical report with actionable insights for coaches and analysts.</p>
+
+<ul class="meta-list">
+  <li><strong>Role:</strong> Data Analyst & ML Engineer</li>
+  <li><strong>Duration:</strong> Mar 2025 — Nov 2025</li>
+  <li><strong>Tech:</strong> Python, Pandas, Scikit-learn, Flask, SQL, Docker</li>
+</ul>
+
+<div class="project-links">
+  <a class="btn btn-outline" href="https://github.com/fragjo01" target="_blank">View Repo</a>
+  <a class="btn" href="assets/tennisprojects/project1.html" target="_blank">Project Report</a>
+</div>
+
+<div class="gallery-panel">
+<div class="gallery-grid" id="tennisGallery"></div>
+</div>
+</div>
+
+<!-- Sports Car Project -->
+<div class="project-header">
+<h2>Sports Car Price Analysis</h2>
+<p class="project-sub">This project analyzes the performance vs. price trade-off in high-end sports cars using R. We explore how efficiently each car delivers horsepower, torque, and acceleration relative to its price.</p>
+</div>
+
+<div class="project-body">
+<div class="project-meta">
+<ul class="meta-list">
+<li><strong>Tools:</strong> R (tidyverse, ggplot2), Jupyter with R kernel</li>
+<li><strong>Outputs:</strong> Cleaned dataset (output/processed_data.csv), Visual charts (PDF)</li>
+</ul>
+<div class="project-links">
+  <p>Charts:</p>
+</div>
+<div class="gallery-panel">
+<div class="gallery-grid" id="sportsCarGallery"></div>
+</div>
+</div>
+
+<!-- Stock Forecast Project -->
+<div class="project-header">
+<h2>Stock Forecast Project</h2>
+<p class="project-sub">This is a basic project where I used SQL, Python (with Prophet), and Power BI to forecast stock prices.</p>
+</div>
+
+<div class="project-body">
+<div class="project-meta">
+<ul class="meta-list">
+<li><strong>Tools:</strong> SQL, Python (Prophet), Power BI</li>
+<li><strong>Stocks:</strong> AAPL, MSFT, AMZN, GOOGL</li>
+<li><strong>Tasks:</strong> SQL data filtering, forecasting with Prophet, plotted forecast vs actual, bar chart ranking, optional Power BI dashboard</li>
+</ul>
+<div class="gallery-panel">
+<div class="gallery-grid" id="stockGallery"></div>
+</div>
+</div>
+
+</section>
+
+<!-- RESUME -->
+<section id="resume" class="tab-content" aria-label="Resume">
+<div class="resume-panel">
+<h2>Resume</h2>
+<p class="lead">Download my resume for details on education, coursework, and project experience.</p>
+<a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume (PDF)</a>
+</div>
+</section>
 </main>
 
 <div id="lightbox" class="lightbox" aria-hidden="true" onclick="closeLightbox()">
-  <button class="lightbox-close" aria-label="Close" onclick="closeLightbox(event)">&times;</button>
-  <button class="lightbox-prev" aria-label="Previous" onclick="prevSlide(event)"><i class="fas fa-chevron-left"></i></button>
-  <img id="lightboxImage" class="lightbox-image" alt="">
-  <button class="lightbox-next" aria-label="Next" onclick="nextSlide(event)"><i class="fas fa-chevron-right"></i></button>
+<button class="lightbox-close" aria-label="Close" onclick="closeLightbox(event)">&times;</button>
+<button class="lightbox-prev" aria-label="Previous" onclick="prevSlide(event)"><i class="fas fa-chevron-left"></i></button>
+<img id="lightboxImage" class="lightbox-image" alt="">
+<button class="lightbox-next" aria-label="Next" onclick="nextSlide(event)"><i class="fas fa-chevron-right"></i></button>
 </div>
 
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div>© <span id="year"></span> Joao Benvenutti</div>
-    <div class="footer-links">
-      <a href="https://github.com/fragjo01" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://www.linkedin.com/in/joao-benvenutti-055585330/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="mailto:fragjo01@luther.edu"><i class="fas fa-envelope"></i> Email</a>
-    </div>
-  </div>
+<div class="container footer-inner">
+<div>© <span id="year"></span> Joao Benvenutti</div>
+<div class="footer-links">
+<a href="https://github.com/fragjo01" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+<a href="https://www.linkedin.com/in/joao-benvenutti-055585330/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+</div>
+</div>
 </footer>
 
 <script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
+// Tabs
 function openTab(tabId, btn){
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
-  document.getElementById(tabId).classList.add('active');
+  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
+  document.querySelectorAll(".tab-content").forEach(c=>c.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById(tabId).classList.add("active");
 }
 
-// Gallery Logic
+// Lightbox & Galleries
 const galleries = {
-  tennisGallery: [
+  tennisGallery:[
     "assets/tennisprojects/Screenshot 2025-11-28 at 13.59.51.png",
     "assets/tennisprojects/Screenshot 2025-11-28 at 13.59.59.png",
     "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.07.png",
@@ -369,13 +380,13 @@ const galleries = {
     "assets/tennisprojects/Screenshot 2025-11-28 at 14.01.40.png",
     "assets/tennisprojects/Screenshot 2025-11-28 at 14.02.17.png"
   ],
-  sportsCarGallery: [
+  sportsCarGallery:[
     "assets/sportscars/actual_vs_predicted_price.pdf",
     "assets/sportscars/hp_per_dollar.pdf",
     "assets/sportscars/speed_vs_price.pdf",
     "assets/sportscars/torque_per_dollar.pdf"
   ],
-  stockGallery: [
+  stockGallery:[
     "assets/stockforecasting/aapl_forecast_lyear.png",
     "assets/stockforecasting/aapl_forecast_vs_actual-checkpoint.png",
     "assets/stockforecasting/aapl_forecast_vs_actual.png",
@@ -392,20 +403,21 @@ function renderGallery(containerId){
   const container = document.getElementById(containerId);
   galleries[containerId].forEach(file=>{
     const ext = file.split('.').pop().toLowerCase();
+    const encodedFile = encodeURI(file);
     if(["png","jpg","jpeg"].includes(ext)){
       const img = document.createElement('img');
-      img.src = file;
+      img.src = encodedFile;
       img.alt = "";
       const btn = document.createElement('button');
       btn.className = "thumb";
       btn.appendChild(img);
-      btn.onclick = ()=>openLightbox(containerId, file);
+      btn.onclick = ()=>openLightbox(containerId, encodedFile);
       container.appendChild(btn);
     } else if(ext === "pdf" || ext === "csv") {
       const card = document.createElement('div');
       card.className = 'pdf-card';
       const link = document.createElement('a');
-      link.href = file;
+      link.href = encodedFile;
       link.target = "_blank";
       link.textContent = file.split('/').pop();
       card.appendChild(link);
@@ -418,30 +430,36 @@ Object.keys(galleries).forEach(renderGallery);
 
 let currentGallery = null;
 let currentIndex = 0;
+
 function openLightbox(galleryId, file){
   const ext = file.split('.').pop().toLowerCase();
   if(ext === "pdf" || ext === "csv") return;
-  currentGallery = galleries[galleryId].filter(f=>["png","jpg","jpeg"].includes(f.split('.').pop().toLowerCase()));
+  currentGallery = galleries[galleryId].filter(f=>["png","jpg","jpeg"].includes(f.split('.').pop().toLowerCase())).map(encodeURI);
   currentIndex = currentGallery.indexOf(file);
   document.getElementById('lightboxImage').src = currentGallery[currentIndex];
   document.getElementById('lightbox').classList.add('active');
 }
 
-function closeLightbox(e){
-  if(e)e.stopPropagation();
+function closeLightbox(event){
+  if(event) event.stopPropagation();
   document.getElementById('lightbox').classList.remove('active');
 }
 
-function prevSlide(e){
-  e.stopPropagation();
-  currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+function prevSlide(event){
+  event.stopPropagation();
+  currentIndex = (currentIndex -1 + currentGallery.length) % currentGallery.length;
   document.getElementById('lightboxImage').src = currentGallery[currentIndex];
 }
-function nextSlide(e){
-  e.stopPropagation();
-  currentIndex = (currentIndex + 1) % currentGallery.length;
+
+function nextSlide(event){
+  event.stopPropagation();
+  currentIndex = (currentIndex +1) % currentGallery.length;
   document.getElementById('lightboxImage').src = currentGallery[currentIndex];
 }
+
+// Footer year
+document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
 </body>
 </html>
