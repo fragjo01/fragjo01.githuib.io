@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Joao Benvenutti — Data Science Portfolio</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 :root{
   --navy-900: #06243a;
@@ -15,26 +16,20 @@
   --radius: 6px;
   --container: 1100px;
 }
+
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;scroll-behavior:smooth}
-body{
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  color:#0f1724;
-  background:#f7f9fb;
-  margin:0;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-}
+html,body{height:100%;scroll-behavior:smooth;font-family:"Inter",sans-serif;}
+body{color:#0f1724;background:#f7f9fb;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
 .container{max-width:var(--container);margin:0 auto;padding:0 20px}
+
 .site-header{
   background:linear-gradient(180deg,var(--navy-900),var(--navy-700));
-  color:var(--white);
-  padding:20px 0;
-  box-shadow:0 4px 18px rgba(6,36,58,0.18);
+  color:var(--white);padding:20px 0;box-shadow:0 4px 18px rgba(6,36,58,0.18);
 }
 .header-inner{display:flex;align-items:center;gap:20px;justify-content:space-between;flex-wrap:wrap}
 .brand h1{font-size:20px;margin:0;font-weight:700;letter-spacing:0.4px}
 .role{margin:4px 0 0 0;font-size:13px;color:rgba(255,255,255,0.85)}
+
 .main-nav{display:flex;gap:8px;flex-wrap:wrap}
 .tab-btn{
   background:transparent;border:none;color:rgba(255,255,255,0.95);
@@ -43,6 +38,7 @@ body{
 }
 .tab-btn:hover{background:rgba(255,255,255,0.06);transform:translateY(-1px)}
 .tab-btn.active{background:var(--white);color:var(--navy-900)}
+
 .header-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .btn{
   background:var(--white);color:var(--navy-900);padding:8px 14px;
@@ -59,275 +55,365 @@ body{
   justify-content:center;width:36px;height:36px;
 }
 .icon-link:hover{color:var(--white);transform:scale(1.1)}
+
 main{padding:36px 0;min-height:60vh}
+
 .tab-content{display:none}
 .tab-content.active{display:block}
-.about-grid{display:grid;grid-template-columns:280px 1fr;gap:28px;align-items:center;margin-top:20px}
-.profile{width:280px;height:280px;object-fit:cover;border-radius:8px;border:1px solid rgba(6,36,58,0.06);box-shadow:0 8px 20px rgba(6,36,58,0.06);display:block}
+
+.about-grid{
+  display:grid;grid-template-columns:280px 1fr;gap:28px;
+  align-items:center;margin-top:20px
+}
+.profile{
+  width:280px;height:280px;object-fit:cover;border-radius:8px;
+  border:1px solid rgba(6,36,58,0.06);
+  box-shadow:0 8px 20px rgba(6,36,58,0.06);
+  display:block;
+}
 .about-text h2{margin:0 0 12px 0;color:var(--navy-900);font-size:28px}
 .lead{color:var(--muted);font-size:15px;line-height:1.6;margin:12px 0}
 .about-list{list-style:none;padding:0;margin:18px 0 0 0;color:var(--muted);font-size:14px}
 .about-list li{margin:8px 0}
+
 .cta-group{display:flex;gap:12px;align-items:center;margin-top:18px;flex-wrap:wrap}
 .link-muted{color:var(--navy-700);text-decoration:none;font-weight:600;font-size:14px}
 .link-muted:hover{text-decoration:underline}
+
 .project-header{text-align:left;margin-bottom:24px}
 .project-header h2{color:var(--navy-900);margin-bottom:8px;font-size:28px}
 .project-sub{color:var(--muted);max-width:820px;font-size:15px;line-height:1.6}
+
 .project-body{display:grid;grid-template-columns:1fr;gap:28px;margin-top:28px}
-.project-meta{background:var(--white);padding:20px;border-radius:8px;border:1px solid rgba(15,23,36,0.04);box-shadow:0 6px 18px rgba(15,23,36,0.03);max-width:100%}
+.project-meta{
+  background:var(--white);padding:20px;border-radius:8px;
+  border:1px solid rgba(15,23,36,0.04);
+  box-shadow:0 6px 18px rgba(15,23,36,0.03);
+  max-width:100%;
+}
 .project-title{margin:0 0 12px 0;color:var(--navy-900);font-size:20px}
 .project-meta > p{color:var(--muted);font-size:14px;line-height:1.6;margin:12px 0}
 .meta-list{list-style:none;padding:0;margin:12px 0;color:var(--muted);font-size:14px}
 .meta-list li{margin:8px 0}
 .project-links{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
+
 .gallery-panel{background:transparent;margin-top:24px}
 .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
-.thumb{background:var(--white);border-radius:6px;padding:0;border:0;cursor:pointer;overflow:hidden;display:block;box-shadow:0 2px 8px rgba(0,0,0,0.05);transition:transform .2s ease, box-shadow .2s ease}
+.thumb{
+  background:var(--white);border-radius:6px;padding:0;border:0;
+  cursor:pointer;overflow:hidden;display:block;
+  box-shadow:0 2px 8px rgba(0,0,0,0.05);
+  transition:transform .2s ease, box-shadow .2s ease;
+  text-align:center;
+}
 .thumb:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.1)}
-.thumb img{width:100%;height:180px;object-fit:cover;display:block;transition:transform .25s ease}
+.thumb img{
+  width:100%;height:180px;object-fit:cover;display:block;
+  transition:transform .25s ease;
+}
 .thumb:hover img{transform:scale(1.03)}
-.pdf-card{background:#f5f5f5;padding:12px;border-radius:6px;text-align:center;font-size:14px}
-.pdf-card a{text-decoration:none;color:#1e88e5;font-weight:600}
-.lightbox{display:none;position:fixed;inset:0;background:rgba(6,20,30,0.92);align-items:center;justify-content:center;z-index:1200}
+.thumb span{display:block;color:var(--navy-900);font-size:12px;padding:4px 0;font-weight:600}
+
+.pdf-card{
+  background:#f0f0f0;padding:12px;border-radius:6px;
+  text-align:center;transition:transform .2s ease,box-shadow .2s ease;
+}
+.pdf-card:hover{transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,0.1);}
+.pdf-card a{text-decoration:none;color:var(--navy-900);font-weight:600;font-size:13px;display:block}
+
+.resume-panel{
+  text-align:center;padding:48px 24px;background:var(--white);
+  border-radius:8px;border:1px solid rgba(15,23,36,0.04);
+  margin-top:20px
+}
+.resume-panel h2{color:var(--navy-900);margin-bottom:12px;font-size:28px}
+
+.lightbox{
+  display:none;position:fixed;inset:0;
+  background:rgba(6,20,30,0.92);align-items:center;
+  justify-content:center;z-index:1200;
+}
 .lightbox.active{display:flex}
-.lightbox-image{max-width:90%;max-height:82%;border-radius:6px;box-shadow:0 20px 50px rgba(2,6,23,0.6)}
-.lightbox-close{position:absolute;right:28px;top:20px;background:transparent;border:none;color:var(--white);font-size:34px;cursor:pointer;width:40px;height:40px;line-height:1}
+.lightbox-image{
+  max-width:90%;max-height:82%;border-radius:6px;
+  box-shadow:0 20px 50px rgba(2,6,23,0.6);
+}
+.lightbox-close{
+  position:absolute;right:28px;top:20px;background:transparent;
+  border:none;color:var(--white);font-size:34px;cursor:pointer;
+  width:40px;height:40px;line-height:1;
+}
 .lightbox-close:hover{opacity:0.7}
-.lightbox-prev,.lightbox-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.1);border:none;color:var(--white);width:46px;height:46px;border-radius:6px;cursor:pointer;transition:background .2s ease}
+.lightbox-prev,.lightbox-next{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,0.1);border:none;color:var(--white);
+  width:46px;height:46px;border-radius:6px;cursor:pointer;
+  transition:background .2s ease;
+}
 .lightbox-prev:hover,.lightbox-next:hover{background:rgba(255,255,255,0.2)}
 .lightbox-prev{left:24px}
 .lightbox-next{right:24px}
-.site-footer{background:var(--navy-900);color:var(--white);padding:18px 0;margin-top:48px}
-.footer-inner{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+
+.site-footer{
+  background:var(--navy-900);color:var(--white);
+  padding:18px 0;margin-top:48px;
+}
+.footer-inner{
+  display:flex;justify-content:space-between;gap:12px;
+  align-items:center;flex-wrap:wrap;
+}
 .footer-links{display:flex;gap:4px;flex-wrap:wrap}
-.footer-links a{color:rgba(255,255,255,0.9);text-decoration:none;margin-left:18px;font-size:14px;display:inline-flex;align-items:center;gap:6px;transition:color .2s ease}
+.footer-links a{
+  color:rgba(255,255,255,0.9);text-decoration:none;
+  margin-left:18px;font-size:14px;transition:color .2s ease;
+  display:inline-flex;align-items:center;gap:6px;
+}
 .footer-links a:hover{color:var(--white)}
-@media (max-width:980px){.about-grid{grid-template-columns:1fr;text-align:center}.profile{margin:0 auto}.cta-group{justify-content:center}.gallery-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}}
-@media (max-width:600px){.header-inner{flex-direction:column;gap:12px;align-items:center}.main-nav{justify-content:center}.header-actions{justify-content:center}.gallery-grid{grid-template-columns:1fr}.footer-inner{flex-direction:column;gap:12px;text-align:center}.footer-links{margin:0;justify-content:center}.footer-links a{margin:0 9px}}
+
+@media (max-width:980px){
+  .about-grid{grid-template-columns:1fr;text-align:center}
+  .profile{margin:0 auto}
+  .cta-group{justify-content:center}
+  .gallery-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+}
+@media (max-width:600px){
+  .header-inner{flex-direction:column;gap:12px;align-items:center}
+  .main-nav{justify-content:center}
+  .header-actions{justify-content:center}
+  .gallery-grid{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;gap:12px;text-align:center}
+  .footer-links{margin:0;justify-content:center}
+  .footer-links a{margin:0 9px}
+}
 </style>
 </head>
 <body>
 
 <header class="site-header">
-<div class="container header-inner">
-  <div class="brand">
-    <h1>Joao Benvenutti</h1>
-    <p class="role">Data Science • Computer Science</p>
+  <div class="container header-inner">
+    <div class="brand">
+      <h1>Joao Benvenutti</h1>
+      <p class="role">Data Science • Computer Science</p>
+    </div>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <button class="tab-btn active" onclick="openTab('about',this)">About</button>
+      <button class="tab-btn" onclick="openTab('projects',this)">Projects</button>
+      <button class="tab-btn" onclick="openTab('resume',this)">Resume</button>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-outline" href="assets/resume.pdf" target="_blank" rel="noopener">View Resume</a>
+      <a class="icon-link" href="https://github.com/fragjo01" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a class="icon-link" href="https://www.linkedin.com/in/joao-benvenutti-055585330/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    </div>
   </div>
-  <nav class="main-nav" aria-label="Main navigation">
-    <button class="tab-btn active" onclick="openTab('about', this)">About</button>
-    <button class="tab-btn" onclick="openTab('projects', this)">Projects</button>
-    <button class="tab-btn" onclick="openTab('resume', this)">Resume</button>
-  </nav>
-  <div class="header-actions">
-    <a class="btn btn-outline" href="assets/resume.pdf" target="_blank">View Resume</a>
-    <a class="icon-link" href="https://github.com/fragjo01" target="_blank"><i class="fab fa-github"></i></a>
-    <a class="icon-link" href="https://www.linkedin.com/in/joao-benvenutti-055585330/" target="_blank"><i class="fab fa-linkedin"></i></a>
-  </div>
-</div>
 </header>
 
 <main class="container">
-<section id="about" class="tab-content active">
-<div class="about-grid">
-<img class="profile" src="assets/profile.jpeg" alt="Joao Benvenutti profile photo"/>
-<div class="about-text">
-<h2>About Me</h2>
-<p class="lead">I'm a passionate Data Science student at Luther College with a strong foundation in computer science and analytics...</p>
-<ul class="about-list">
-  <li><strong>Education:</strong> Data Science Major, Computer Science Minor</li>
-  <li><strong>Tools:</strong> Python, SQL, R, CSS, Power BI, Tableau, HTML, JAVA, JavaScript</li>
-  <li><strong>Interests:</strong> Data analysis, ML, visualization</li>
-</ul>
-<div class="cta-group">
-  <a class="btn" href="assets/resume.pdf" target="_blank">Download Resume</a>
-  <a class="link-muted" href="mailto:fragjo01@luther.edu">fragjo01@luther.edu</a>
-</div>
-</div>
-</div>
+<!-- About -->
+<section id="about" class="tab-content active" aria-labelledby="aboutTab">
+  <div class="about-grid">
+    <img class="profile" src="assets/profile.jpeg" alt="Joao Benvenutti profile photo" />
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p class="lead">
+        I'm a passionate Data Science student at Luther College with a strong foundation in computer science and analytics. I specialize in transforming raw data into actionable insights through end-to-end machine learning pipelines. My approach combines technical rigor with clear communication, ensuring that complex analyses drive real business value.
+      </p>
+      <ul class="about-list">
+        <li><strong>Education:</strong> Data Science Major, Computer Science Minor</li>
+        <li><strong>Tools:</strong> Python, SQL, R, CSS, Power BI, Tableau, HTML, JAVA, JavaScript, Data Cleaning, Excel, Flask</li>
+        <li><strong>Interests:</strong> Data Analysis, Statistical Modeling, Data Visualization, Business Intelligence</li>
+      </ul>
+      <div class="cta-group">
+        <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        <a class="link-muted" href="mailto:fragjo01@luther.edu">fragjo01@luther.edu</a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="projects" class="tab-content">
+<!-- Projects -->
+<section id="projects" class="tab-content" aria-label="Projects">
+  <!-- Tennis Project -->
+  <div class="project-header">
+    <h2>Tennis Analytics — Case Study</h2>
+    <p class="project-sub">End-to-end analysis of tennis match data: data cleaning, exploratory analysis, feature engineering, model building, and visual storytelling.</p>
+  </div>
+  <div class="project-body">
+    <div class="project-meta">
+      <h3 class="project-title">Tennis Match Data Analysis</h3>
+      <p>This comprehensive tennis analytics project demonstrates my ability to handle real-world sports data from collection through deployment. I developed an ETL pipeline, engineered metrics, and built a predictive ML model (78% accuracy). Final deliverables include a Flask dashboard, Jupyter notebooks, and a technical report.</p>
+      <ul class="meta-list">
+        <li><strong>Role:</strong> Data Analyst & ML Engineer</li>
+        <li><strong>Duration:</strong> Mar 2025 — Nov 2025</li>
+        <li><strong>Tech:</strong> Python, Pandas, Scikit-learn, Flask, SQL, Docker</li>
+      </ul>
+      <div class="project-links">
+        <a class="btn btn-outline" href="https://github.com/fragjo01" target="_blank">View Repo</a>
+        <a class="btn" href="assets/tennisproject/project1.html" target="_blank">Project Report</a>
+      </div>
+    </div>
+    <div class="gallery-panel">
+      <div class="gallery-grid" id="galleryTennis"></div>
+    </div>
+  </div>
 
-<!-- Tennis Project -->
-<div class="project-header">
-<h2>Tennis Analytics — Case Study</h2>
-<p class="project-sub">End-to-end analysis of tennis match data: data cleaning, feature engineering, modeling, and visual storytelling.</p>
-</div>
-<div class="project-body">
-<div class="project-meta">
-<h3 class="project-title">Tennis Match Data Analysis</h3>
-<p>Comprehensive tennis analytics project: ETL pipeline, feature engineering, ML model predicting match outcomes, interactive dashboard, full report.</p>
-<ul class="meta-list">
-<li><strong>Role:</strong> Data Analyst & ML Engineer</li>
-<li><strong>Duration:</strong> Mar 2025 — Nov 2025</li>
-<li><strong>Tech:</strong> Python, Pandas, Scikit-learn, Flask, SQL</li>
-</ul>
-<div class="project-links">
-<a class="btn btn-outline" href="https://github.com/fragjo01" target="_blank">View Repo</a>
-<a class="btn" href="assets/tennisprojects/project1.html" target="_blank">Project Report</a>
-</div>
-<div class="gallery-panel">
-<div class="gallery-grid" id="tennisGallery"></div>
-</div>
-</div>
+  <!-- Sports Car Project -->
+  <div class="project-header">
+    <h2>Sports Car Price Analysis</h2>
+    <p class="project-sub">Analyzing performance vs. price trade-off in high-end sports cars using R and Jupyter (R kernel).</p>
+  </div>
+  <div class="project-body">
+    <div class="project-meta">
+      <h3 class="project-title">Sports Car Analysis</h3>
+      <p>We explore how efficiently each car delivers horsepower, torque, and acceleration relative to its price. Key insights highlight the best value sports cars.</p>
+      <ul class="meta-list">
+        <li><strong>Tools:</strong> R (tidyverse, ggplot2), Jupyter with R kernel</li>
+        <li><strong>Outputs:</strong> Cleaned dataset, charts (PDF)</li>
+      </ul>
+    </div>
+    <div class="gallery-panel">
+      <div class="gallery-grid" id="gallerySportscars"></div>
+    </div>
+  </div>
 
-<!-- Sports Car Project -->
-<div class="project-header">
-<h2>Sports Car Price Analysis</h2>
-<p class="project-sub">Analyzes the performance vs. price trade-off in high-end sports cars using R.</p>
-</div>
-<div class="project-body">
-<div class="project-meta">
-<ul class="meta-list">
-<li><strong>Tools:</strong> R (tidyverse, ggplot2), Jupyter with R kernel</li>
-<li><strong>Outputs:</strong> Cleaned dataset, Visual charts (PDF)</li>
-</ul>
-<div class="gallery-panel">
-<div class="gallery-grid" id="sportsCarGallery"></div>
-</div>
-</div>
-
-<!-- Stock Forecast Project -->
-<div class="project-header">
-<h2>Stock Forecast Project</h2>
-<p class="project-sub">Forecasting stock prices using SQL, Python (Prophet), and Power BI.</p>
-</div>
-<div class="project-body">
-<div class="project-meta">
-<ul class="meta-list">
-<li><strong>Tools:</strong> SQL, Python, Power BI</li>
-<li><strong>Stocks:</strong> AAPL, MSFT, AMZN, GOOGL</li>
-<li><strong>Tasks:</strong> Data filtering, forecasting, plotting vs actual, bar chart ranking, dashboard</li>
-</ul>
-<div class="gallery-panel">
-<div class="gallery-grid" id="stockGallery"></div>
-</div>
-</div>
+  <!-- Stock Forecast Project -->
+  <div class="project-header">
+    <h2>Stock Forecast Project</h2>
+    <p class="project-sub">Forecasting stock prices for AAPL, MSFT, AMZN, GOOGL using SQL, Python (Prophet), and Power BI dashboards.</p>
+  </div>
+  <div class="project-body">
+    <div class="project-meta">
+      <h3 class="project-title">Stock Forecasting</h3>
+      <p>Used SQL for data filtering, Prophet for 1-year forecasts, plotted forecast vs actual, and created comparative bar charts. Optional dashboards in Power BI.</p>
+      <ul class="meta-list">
+        <li><strong>Tools:</strong> SQL, Python (Prophet), Power BI</li>
+        <li><strong>Outputs:</strong> Forecast plots (PNG), data CSV, bar charts, dashboards</li>
+      </ul>
+    </div>
+    <div class="gallery-panel">
+      <div class="gallery-grid" id="galleryStock"></div>
+    </div>
+  </div>
 </section>
 
-<section id="resume" class="tab-content">
-<div class="resume-panel">
-<h2>Resume</h2>
-<a class="btn" href="assets/resume.pdf" target="_blank">Download Resume (PDF)</a>
-</div>
+<!-- Resume -->
+<section id="resume" class="tab-content" aria-label="Resume">
+  <div class="resume-panel">
+    <h2>Resume</h2>
+    <p class="lead">Download my resume for details on education, coursework, and project experience.</p>
+    <a class="btn" href="assets/resume.pdf" target="_blank">Download Resume (PDF)</a>
+  </div>
 </section>
 
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-<button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
-<button class="lightbox-prev" onclick="prevSlide(event)"><i class="fas fa-chevron-left"></i></button>
-<img id="lightboxImage" class="lightbox-image">
-<button class="lightbox-next" onclick="nextSlide(event)"><i class="fas fa-chevron-right"></i></button>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" aria-hidden="true" onclick="closeLightbox()">
+  <button class="lightbox-close" aria-label="Close" onclick="closeLightbox(event)">&times;</button>
+  <button class="lightbox-prev" aria-label="Previous" onclick="prevSlide(event)"><i class="fas fa-chevron-left"></i></button>
+  <img id="lightboxImage" class="lightbox-image" alt="">
+  <button class="lightbox-next" aria-label="Next" onclick="nextSlide(event)"><i class="fas fa-chevron-right"></i></button>
 </div>
 
 <footer class="site-footer">
-<div class="container footer-inner">
-<div>© <span id="year"></span> Joao Benvenutti</div>
-<div class="footer-links">
-<a href="https://github.com/fragjo01" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-<a href="https://www.linkedin.com/in/joao-benvenutti-055585330/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-</div>
-</div>
+  <div class="container footer-inner">
+    <div>&copy; 2025 Joao Benvenutti</div>
+    <div class="footer-links">
+      <a href="https://github.com/fragjo01" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://www.linkedin.com/in/joao-benvenutti-055585330/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      <a href="mailto:fragjo01@luther.edu"><i class="fas fa-envelope"></i> Email</a>
+    </div>
+  </div>
 </footer>
 
 <script>
-// Tabs
-function openTab(tabId, btn){
-  document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
-  document.querySelectorAll(".tab-content").forEach(c=>c.classList.remove("active"));
-  btn.classList.add("active");
-  document.getElementById(tabId).classList.add("active");
+// Tab navigation
+function openTab(tabId, el){
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  el.classList.add('active');
 }
 
-// Galleries
-const galleries = {
-tennisGallery:[
-"assets/tennisprojects/Screenshot%202025-11-28%20at%2013.59.51.png",
-"assets/tennisprojects/Screenshot%202025-11-28%20at%2013.59.59.png",
-"assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.07.png",
-"assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.24.png",
-"assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.32.png",
-"assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.40.png",
-"assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.49.png",
-"assets/tennisprojects/Screenshot%202025-11-28%20at%2014.00.56.png",
-"assets/tennisprojects/Screenshot%202025-11-28%20at%2014.01.04.png",
-"assets/tennisprojects/Screenshot%202025-11-28%20at%2014.01.12.png",
-"assets/tennisprojects/Screenshot%202025-11-28%20at%2014.01.21.png",
-"assets/tennisprojects/Screenshot%202025-11-28%20at%2014.01.40.png",
-"assets/tennisprojects/Screenshot%202025-11-28%20at%2014.02.17.png"
-],
-sportsCarGallery:[
-"assets/sportscars/actual_vs_predicted_price.pdf",
-"assets/sportscars/hp_per_dollar.pdf",
-"assets/sportscars/speed_vs_price.pdf",
-"assets/sportscars/torque_per_dollar.pdf"
-],
-stockGallery:[
-"assets/stockforecasting/aapl_forecast_lyear.png",
-"assets/stockforecasting/aapl_forecast_vs_actual-checkpoint.png",
-"assets/stockforecasting/aapl_forecast_vs_actual.png",
-"assets/stockforecasting/actual_vs_predicted_price.pdf",
-"assets/stockforecasting/amzn_forecast_1year.png",
-"assets/stockforecasting/googl_forecast_lyear.png",
-"assets/stockforecasting/msft_for_prophet.csv",
-"assets/stockforecasting/msft_forecast_lyear.png",
-"assets/stockforecasting/trend_ranking_bar_chart.png"
-]
-};
-
-function renderGallery(containerId){
-  const container=document.getElementById(containerId);
-  galleries[containerId].forEach(file=>{
-    const ext=file.split('.').pop().toLowerCase();
-    if(["png","jpg","jpeg"].includes(ext)){
-      const img=document.createElement('img');
-      img.src=file;
-      const btn=document.createElement('button');
-      btn.className="thumb";
-      btn.appendChild(img);
-      btn.onclick=()=>openLightbox(containerId,file);
-      container.appendChild(btn);
-    } else if(ext==="pdf"||ext==="csv"){
-      const card=document.createElement('div');
-      card.className='pdf-card';
-      const link=document.createElement('a');
-      link.href=file;
-      link.target="_blank";
-      link.textContent=file.split('/').pop();
-      card.appendChild(link);
-      container.appendChild(card);
-    }
-  });
-}
-Object.keys(galleries).forEach(renderGallery);
-
-let currentGallery=null;
-let currentIndex=0;
-function openLightbox(galleryId,file){
-  const ext=file.split('.').pop().toLowerCase();
-  if(ext==="pdf"||ext==="csv") return;
-  currentGallery=galleries[galleryId].filter(f=>["png","jpg","jpeg"].includes(f.split('.').pop().toLowerCase()));
-  currentIndex=currentGallery.indexOf(file);
-  document.getElementById('lightboxImage').src=currentGallery[currentIndex];
-  document.getElementById('lightbox').classList.add('active');
+// Lightbox
+let currentGallery = [];
+let currentIndex = 0;
+function showLightbox(images, index){
+  currentGallery = images;
+  currentIndex = index;
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImage');
+  img.src = images[index].src;
+  img.alt = images[index].alt;
+  lb.classList.add('active');
 }
 function closeLightbox(event){
   if(event) event.stopPropagation();
   document.getElementById('lightbox').classList.remove('active');
 }
-function prevSlide(event){
-  event.stopPropagation();
-  currentIndex=(currentIndex-1+currentGallery.length)%currentGallery.length;
-  document.getElementById('lightboxImage').src=currentGallery[currentIndex];
-}
-function nextSlide(event){
-  event.stopPropagation();
-  currentIndex=(currentIndex+1)%currentGallery.length;
-  document.getElementById('lightboxImage').src=currentGallery[currentIndex];
-}
+function prevSlide(event){event.stopPropagation();currentIndex=(currentIndex-1+currentGallery.length)%currentGallery.length;document.getElementById('lightboxImage').src=currentGallery[currentIndex].src}
+function nextSlide(event){event.stopPropagation();currentIndex=(currentIndex+1)%currentGallery.length;document.getElementById('lightboxImage').src=currentGallery[currentIndex].src}
 
-document.getElementById('year').textContent=new Date().getFullYear();
+// Add images to galleries dynamically
+const galleryTennisData = [
+  'assets/tennisprojects/Screenshot 2025-11-28 at 13.59.51.png',
+  'assets/tennisprojects/Screenshot 2025-11-28 at 13.59.59.png',
+  'assets/tennisprojects/Screenshot 2025-11-28 at 14.00.07.png',
+  'assets/tennisprojects/Screenshot 2025-11-28 at 14.00.24.png',
+  'assets/tennisprojects/Screenshot 2025-11-28 at 14.00.32.png',
+  'assets/tennisprojects/Screenshot 2025-11-28 at 14.00.40.png',
+  'assets/tennisprojects/Screenshot 2025-11-28 at 14.00.49.png',
+  'assets/tennisprojects/Screenshot 2025-11-28 at 14.00.56.png',
+  'assets/tennisprojects/Screenshot 2025-11-28 at 14.01.04.png',
+  'assets/tennisprojects/Screenshot 2025-11-28 at 14.01.12.png',
+  'assets/tennisprojects/Screenshot 2025-11-28 at 14.01.21.png',
+  'assets/tennisprojects/Screenshot 2025-11-28 at 14.01.40.png',
+  'assets/tennisprojects/Screenshot 2025-11-28 at 14.02.17.png'
+];
+const gallerySportscarsData = [
+  'assets/sportscars/actual_vs_predicted_price.pdf',
+  'assets/sportscars/hp_per_dollar.pdf',
+  'assets/sportscars/speed_vs_price.pdf',
+  'assets/sportscars/torque_per_dollar.pdf'
+];
+const galleryStockData = [
+  'assets/stockforecasting/aapl_forecast_lyear.png',
+  'assets/stockforecasting/aapl_forecast_vs_actual-checkpoint.png',
+  'assets/stockforecasting/aapl_forecast_vs_actual.png',
+  'assets/stockforecasting/actual_vs_predicted_price.pdf',
+  'assets/stockforecasting/amzn_forecast_1year.png',
+  'assets/stockforecasting/googl_forecast_lyear.png',
+  'assets/stockforecasting/msft_for_prophet.csv',
+  'assets/stockforecasting/msft_forecast_lyear.png',
+  'assets/stockforecasting/trend_ranking_bar_chart.png'
+];
+
+function createGallery(galleryId, data){
+  const container = document.getElementById(galleryId);
+  data.forEach((src, index)=>{
+    const ext = src.split('.').pop().toLowerCase();
+    if(ext==='pdf' || ext==='csv'){
+      const card = document.createElement('div');
+      card.className='pdf-card';
+      const name = src.split('/').pop();
+      const link = document.createElement('a');
+      link.href=src;link.target="_blank";link.rel="noopener";link.textContent=name;
+      card.appendChild(link);
+      container.appendChild(card);
+    }else{
+      const img = document.createElement('img');img.src=src;img.alt=name;
+      const thumb = document.createElement('button');thumb.className='thumb';
+      thumb.appendChild(img);
+      thumb.addEventListener('click',()=>showLightbox(container.querySelectorAll('img'),index));
+      container.appendChild(thumb);
+    }
+  });
+}
+createGallery('galleryTennis', galleryTennisData);
+createGallery('gallerySportscars', gallerySportscarsData);
+createGallery('galleryStock', galleryStockData);
 </script>
 </body>
 </html>
