@@ -161,7 +161,41 @@
       <div class="project-meta">
         <h3 class="project-title">Tennis Analytics — Case Study</h3>
         <p>
-          End-to-end analysis of tennis match data: cleaning, feature engineering, modeling, and visualization. Includes a Flask dashboard and reproducible Jupyter notebooks.
+          This project explores match duration in professional tennis using over 345,000 matches from various tournaments. The goal was to understand how key in-match statistics influence match length and to develop predictive models for match duration.
+
+Project Highlights:
+
+Response Variable: Match Duration (minutes)
+
+Predictor Variables: Aces, Double Faults, Service Points Attempted, Return Points Attempted, Total Points, Court Surface
+
+Data Summary: Dataset includes 345,974 matches, filtered for matches between 35 and 300 minutes; point-based variables are strongly correlated, while aces and double faults are weaker predictors.
+
+Modeling Approach:
+
+First-Order Model: All predictors statistically significant; Adjusted R² = 0.835, Residual SE = 14.19 min.
+
+Interaction Model & Stepwise Regression: Added two-way interactions between quantitative variables; final model includes 13 terms selected via AIC stepwise regression, Adjusted R² = 0.8309, improved fit and clarity.
+
+Transformed Model: Box-Cox transformation applied to response variable for normality; all predictors remain significant, Adjusted R² = 0.829.
+
+Model Evaluation: Compared multiple models using Test Mean Squared Error (MSE); the stepwise interaction model achieved the lowest Test MSE (~0.897), chosen as the final model.
+
+Key Insights:
+
+Aces and double faults negatively impact match duration.
+
+Interactions between service points and aces, as well as return points and total points, significantly improve predictive power.
+
+Most matches are short and right-skewed; transformations improve model accuracy.
+
+Tools Used:
+
+R (tidyverse, ggplot2)
+
+Jupyter Notebook with R kernel
+
+Statistical modeling, stepwise regression, and data visualization.
         </p>
         <div class="project-links">
           <a class="btn" href="assets/tennisproject/project1.html" target="_blank">Project Report</a>
@@ -177,7 +211,17 @@
       <div class="project-meta">
         <h3 class="project-title">Sports Car Price Analysis</h3>
         <p>
-          Analyzing performance vs price trade-offs in high-end sports cars.
+          This project examines the performance-to-price trade-offs in high-end sports cars using R. I analyzed how efficiently each car delivers horsepower, torque, and acceleration relative to its cost, identifying top value performers.
+
+Project Highlights:
+
+Data & Workflow: Cleaned dataset (processed_data.csv) and visualized insights using R notebooks.
+
+Visualizations: Generated charts for Speed ​​per Dollar, Horsepower per Dollar, and Torque per Dollar (PDF).
+
+Key Insights: Not all high-priced cars provide proportionally higher performance; top 20 rankings highlight the best value sports cars.
+
+Tools: R (tidyverse, ggplot2) and Jupyter Notebook with R kernel for reproducible analysis.
         </p>
       </div>
       <div class="gallery-panel">
@@ -195,16 +239,36 @@
       <div class="project-meta">
         <h3 class="project-title">Stock Forecast Project</h3>
         <p>
-          Forecasting stock prices using SQL, Python (Prophet), and Power BI.
+          This project forecasts stock prices for major tech companies using SQL, Python (Prophet), and Power BI. I analyzed historical stock data, built predictive models, and visualized expected growth to support data-driven insights.
+
+Project Highlights:
+
+Stocks Covered: AAPL, MSFT, AMZN, GOOGL
+
+Data & Workflow: Filtered and prepared data using SQL; forecast 1-year stock prices with Python and Prophet; visualized results in charts and optional Power BI dashboards.
+
+Key Insights: Forecast vs. current comparisons highlight trends and expected growth; bar charts summarize projected performance across stocks.
+
+Tools: SQL, Python (Prophet), Power BI, Jupyter Notebook
+
+Project Structure:
+
+data/ – raw datasets
+
+notebooks/ – code and analysis
+
+images/ – generated charts and visualizations
+
+output/ – predicted results
         </p>
       </div>
       <div class="gallery-panel">
         <div class="gallery-grid" id="stocksGallery">
-          <img class="media-card" src="assets/stockforecasting/aapl_forecast_lyear.png" alt="AAPL Forecast">
-          <img class="media-card" src="assets/stockforecasting/aapl_forecast_vs_actual.png" alt="AAPL vs Actual">
-          <img class="media-card" src="assets/stockforecasting/amzn_forecast_1year.png" alt="AMZN Forecast">
-          <img class="media-card" src="assets/stockforecasting/googl_forecast_lyear.png" alt="GOOGL Forecast">
-          <img class="media-card" src="assets/stockforecasting/msft_forecast_lyear.png" alt="MSFT Forecast">
+          <iframe class="media-card" src="assets/stockforecasting/aapl_forecast_lyear.png" alt="AAPL Forecast"></iframe>
+          <iframe class="media-card" src="assets/stockforecasting/aapl_forecast_vs_actual.png" alt="AAPL vs Actual"></iframe>
+          <iframe class="media-card" src="assets/stockforecasting/amzn_forecast_1year.png" alt="AMZN Forecast"></iframe>
+          <iframe class="media-card" src="assets/stockforecasting/googl_forecast_lyear.png" alt="GOOGL Forecast"></iframe>
+          <iframe class="media-card" src="assets/stockforecasting/msft_forecast_lyear.png" alt="MSFT Forecast"></iframe>
           <iframe class="media-card" src="assets/stockforecasting/actual_vs_predicted_price.pdf"></iframe>
         </div>
       </div>
