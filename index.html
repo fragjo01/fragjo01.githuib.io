@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -123,16 +123,13 @@
     .thumb:hover img{transform:scale(1.03)}
 
     .pdf-card{
-      padding:16px;
-      background:var(--white);
-      border:1px solid rgba(15,23,36,0.1);
-      border-radius:6px;
-      box-shadow:0 2px 6px rgba(0,0,0,0.05);
-      text-align:center;
-      font-size:14px;
-    }
-    .pdf-card a{
-      text-decoration:none;color:var(--accent);font-weight:600;
+      background: #f9f9f9;
+      border-radius: 6px;
+      padding: 12px;
+      border: 1px solid rgba(15,23,36,0.1);
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
     }
 
     .resume-panel{
@@ -230,7 +227,7 @@
 
   <main class="container">
     <!-- ABOUT -->
-    <section id="about" class="tab-content active" aria-labelledby="aboutTab">
+    <section id="about" class="tab-content active">
       <div class="about-grid">
         <img class="profile" src="assets/profile.jpeg" alt="Joao Benvenutti profile photo" onerror="this.style.display='none'" />
         <div class="about-text">
@@ -240,8 +237,8 @@
           </p>
           <ul class="about-list">
             <li><strong>Education:</strong> Data Science Major, Computer Science Minor</li>
-            <li><strong>Tools:</strong> Python, SQL, R, CSS, Power BI, Tableau, HTML, Java, JavaScript, Jupyter Notebooks, PyCharm, VS Code, RStudio, Power Pivot, Microsoft Excel (Intermediate/Advanced), Microsoft PowerPoint, Microsoft Word</li>
-            <li><strong>Interests:</strong> Data analysis, statistical modeling, data visualization, business intelligence</li>
+            <li><strong>Tools:</strong> Python, SQL, R, Java, JavaScript, HTML, CSS, Power BI, Tableau, Jupyter Notebooks</li>
+            <li><strong>Interests:</strong> Data analysis, machine learning, data visualization, predictive modeling, business intelligence</li>
           </ul>
           <div class="cta-group">
             <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">Download Resume</a>
@@ -252,18 +249,18 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="tab-content" aria-label="Projects">
-
-      <!-- Tennis Project -->
+    <section id="projects" class="tab-content">
       <div class="project-header">
-        <h2>Tennis Analytics — Case Study</h2>
+        <h2>Projects</h2>
         <p class="project-sub">
-          End-to-end analysis of tennis match data: data cleaning, exploratory analysis, feature engineering, model building, and visual storytelling.
+          A collection of data science and analytics projects showcasing end-to-end data pipelines, statistical modeling, and machine learning applications.
         </p>
       </div>
+
+      <!-- Tennis Analytics -->
       <div class="project-body">
         <div class="project-meta">
-          <h3 class="project-title">Tennis Match Data Analysis</h3>
+          <h3 class="project-title">Tennis Analytics — Case Study</h3>
           <p>
             This comprehensive tennis analytics project demonstrates my ability to handle real-world sports data from collection through deployment. I developed an ETL pipeline to clean and structure match-level and point-by-point data, then engineered performance metrics including serve efficiency, return ratings, rally patterns, and winner-to-error ratios. Using exploratory data analysis with Matplotlib and Seaborn, I identified key performance indicators that separate top players from the field. I built a machine learning model using scikit-learn to predict match outcomes with 78% accuracy, leveraging features like momentum shifts and surface-specific performance. The final deliverable includes an interactive Flask dashboard for real-time player comparisons, fully documented Jupyter notebooks for reproducibility, and a comprehensive technical report with actionable insights for coaches and analysts.
           </p>
@@ -282,22 +279,16 @@
         </div>
       </div>
 
-      <!-- Sports Car Project -->
-      <div class="project-header">
-        <h2>Sports Car Price Analysis</h2>
-        <p class="project-sub">
-          Analyzing performance vs. price in high-end sports cars using R. Explore efficiency in horsepower, torque, and acceleration relative to cost.
-        </p>
-      </div>
+      <!-- Sports Car Price Analysis -->
       <div class="project-body">
         <div class="project-meta">
-          <h3 class="project-title">Sports Car Analysis</h3>
+          <h3 class="project-title">Sports Car Price Analysis</h3>
           <p>
-            Key insights include some cars delivering much higher performance per dollar. Acceleration (0–60), horsepower, and torque do not always align with price. Top 20 rankings highlight the best value sports cars.
+            This project analyzes the performance vs. price trade-off in high-end sports cars using R. We explore how efficiently each car delivers horsepower, torque, and acceleration relative to its price.
           </p>
           <ul class="meta-list">
             <li><strong>Role:</strong> Data Analyst</li>
-            <li><strong>Tech:</strong> R (tidyverse, ggplot2), Jupyter with R kernel</li>
+            <li><strong>Tech:</strong> R (tidyverse, ggplot2), Jupyter (R kernel)</li>
           </ul>
         </div>
         <div class="gallery-panel">
@@ -305,18 +296,12 @@
         </div>
       </div>
 
-      <!-- Stock Forecast Project -->
-      <div class="project-header">
-        <h2>Stock Forecast Project</h2>
-        <p class="project-sub">
-          Forecasting stock prices using SQL, Python (Prophet), and Power BI for companies including AAPL, MSFT, AMZN, and GOOGL.
-        </p>
-      </div>
+      <!-- Stock Forecasting -->
       <div class="project-body">
         <div class="project-meta">
-          <h3 class="project-title">Stock Price Forecasting</h3>
+          <h3 class="project-title">Stock Forecast Project</h3>
           <p>
-            Used SQL for data filtering, Python with Prophet for one-year forecasts, and plotted forecast vs. actual values. Optional dashboard created in Power BI for visual comparison and trend analysis.
+            A project where I used SQL, Python (Prophet), and Power BI to forecast stock prices for AAPL, MSFT, AMZN, and GOOGL. Generated visualizations and dashboards comparing forecasted vs actual trends and highlighting top growth stocks.
           </p>
           <ul class="meta-list">
             <li><strong>Role:</strong> Data Analyst</li>
@@ -348,101 +333,104 @@
     </div>
   </footer>
 
+  <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-    <button class="lightbox-prev" onclick="prevImage()">&#10094;</button>
-    <img class="lightbox-image" id="lightboxImg" src="" alt="Lightbox">
-    <button class="lightbox-next" onclick="nextImage()">&#10095;</button>
+    <button class="lightbox-prev" onclick="prevImage()">&larr;</button>
+    <img class="lightbox-image" id="lightboxImage">
+    <button class="lightbox-next" onclick="nextImage()">&rarr;</button>
   </div>
 
   <script>
-    const tabs = document.querySelectorAll(".tab-btn");
-    function openTab(tabId, el){
-      document.querySelectorAll(".tab-content").forEach(tc=>tc.classList.remove("active"));
-      document.getElementById(tabId).classList.add("active");
-      tabs.forEach(t=>t.classList.remove("active"));
-      el.classList.add("active");
+    function openTab(tabName, elm){
+      document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.getElementById(tabName).classList.add('active');
+      elm.classList.add('active');
     }
 
-    // Projects Images
+    // Images for galleries
     const tennisImages = [
-      "assets/tennisprojects/Screenshot 2025-11-28 at 13.59.51.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 13.59.59.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.07.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.24.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.32.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.40.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.49.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.00.56.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.01.04.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.01.12.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.01.21.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.01.40.png",
-      "assets/tennisprojects/Screenshot 2025-11-28 at 14.02.17.png"
-    ];
-    const sportscarFiles = [
-      "assets/sportscars/actual_vs_predicted_price.pdf",
-      "assets/sportscars/hp_per_dollar.pdf",
-      "assets/sportscars/speed_vs_price.pdf",
-      "assets/sportscars/torque_per_dollar.pdf"
-    ];
-    const stockFiles = [
-      "assets/stockforecasting/aapl_forecast_lyear.png",
-      "assets/stockforecasting/aapl_forecast_vs_actual-checkpoint.png",
-      "assets/stockforecasting/aapl_forecast_vs_actual.png",
-      "assets/stockforecasting/actual_vs_predicted_price.pdf",
-      "assets/stockforecasting/amzn_forecast_1year.png",
-      "assets/stockforecasting/googl_forecast_lyear.png",
-      "assets/stockforecasting/msft_for_prophet.csv",
-      "assets/stockforecasting/msft_forecast_lyear.png",
-      "assets/stockforecasting/trend_ranking_bar_chart.png"
+      'assets/tennisprojects/Screenshot 2025-11-28 at 13.59.51.png',
+      'assets/tennisprojects/Screenshot 2025-11-28 at 13.59.59.png',
+      'assets/tennisprojects/Screenshot 2025-11-28 at 14.00.07.png',
+      'assets/tennisprojects/Screenshot 2025-11-28 at 14.00.24.png',
+      'assets/tennisprojects/Screenshot 2025-11-28 at 14.00.32.png',
+      'assets/tennisprojects/Screenshot 2025-11-28 at 14.00.40.png',
+      'assets/tennisprojects/Screenshot 2025-11-28 at 14.00.49.png',
+      'assets/tennisprojects/Screenshot 2025-11-28 at 14.00.56.png',
+      'assets/tennisprojects/Screenshot 2025-11-28 at 14.01.04.png',
+      'assets/tennisprojects/Screenshot 2025-11-28 at 14.01.12.png',
+      'assets/tennisprojects/Screenshot 2025-11-28 at 14.01.21.png',
+      'assets/tennisprojects/Screenshot 2025-11-28 at 14.01.40.png',
+      'assets/tennisprojects/Screenshot 2025-11-28 at 14.02.17.png'
     ];
 
-    function createGallery(gridId, files){
-      const grid = document.getElementById(gridId);
-      files.forEach(f=>{
-        const ext = f.split('.').pop().toLowerCase();
-        if(ext==="pdf"||ext==="csv"){
-          const div = document.createElement("div");
-          div.className = "pdf-card";
-          div.innerHTML = `<a href="${f}" target="_blank" rel="noopener">${f.split('/').pop()}</a>`;
-          grid.appendChild(div);
-        } else {
-          const btn = document.createElement("button");
-          btn.className="thumb";
-          const img = document.createElement("img");
-          img.src=f;
-          img.alt=f.split('/').pop();
-          btn.appendChild(img);
-          btn.onclick=()=>openLightbox(f);
-          grid.appendChild(btn);
+    const sportsCarImages = [
+      'assets/sportscars/actual_vs_predicted_price.pdf',
+      'assets/sportscars/hp_per_dollar.pdf',
+      'assets/sportscars/speed_vs_price.pdf',
+      'assets/sportscars/torque_per_dollar.pdf'
+    ];
+
+    const stockImages = [
+      'assets/stockforecasting/aapl_forecast_lyear.png',
+      'assets/stockforecasting/aapl_forecast_vs_actual-checkpoint.png',
+      'assets/stockforecasting/aapl_forecast_vs_actual.png',
+      'assets/stockforecasting/actual_vs_predicted_price.pdf',
+      'assets/stockforecasting/amzn_forecast_1year.png',
+      'assets/stockforecasting/googl_forecast_lyear.png',
+      'assets/stockforecasting/msft_for_prophet.csv',
+      'assets/stockforecasting/msft_forecast_lyear.png',
+      'assets/stockforecasting/trend_ranking_bar_chart.png'
+    ];
+
+    function createGallery(containerId, images){
+      const container = document.getElementById(containerId);
+      images.forEach(img=>{
+        const ext = img.split('.').pop().toLowerCase();
+        if(ext==='pdf'){
+          const card = document.createElement('div');
+          card.className='pdf-card';
+          card.innerHTML=`<a href="${img}" target="_blank">View PDF</a>`;
+          container.appendChild(card);
+        }else{
+          const div = document.createElement('div');
+          div.className='thumb';
+          const image = document.createElement('img');
+          image.src=img;
+          image.alt='';
+          image.onclick=()=>openLightbox(images.indexOf(img), images);
+          div.appendChild(image);
+          container.appendChild(div);
         }
       });
     }
 
-    createGallery("galleryTennis", tennisImages);
-    createGallery("gallerySportscars", sportscarFiles);
-    createGallery("galleryStock", stockFiles);
+    createGallery('galleryTennis', tennisImages);
+    createGallery('gallerySportscars', sportsCarImages);
+    createGallery('galleryStock', stockImages);
 
-    // Lightbox
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightboxImg");
-    let currentLightbox = 0;
-    let currentGallery = [];
+    // Lightbox logic
+    let currentIndex = 0;
+    let currentImages = [];
 
-    function openLightbox(src){
-      lightbox.classList.add("active");
-      lightboxImg.src = src;
-
-      // Find which gallery we are in
-      const allThumbs = Array.from(document.querySelectorAll(".thumb img"));
-      currentGallery = allThumbs.map(i=>i.src);
-      currentLightbox = currentGallery.indexOf(src);
+    function openLightbox(index, images){
+      currentIndex=index;
+      currentImages=images;
+      document.getElementById('lightboxImage').src=images[index];
+      document.getElementById('lightbox').classList.add('active');
     }
 
-    function closeLightbox(){lightbox.classList.remove("active");}
-    function prevImage(){currentLightbox=(currentLightbox-1+currentGallery.length)%currentGallery.length;lightboxImg.src=currentGallery[currentLightbox];}
-    function nextImage(){currentLightbox=(currentLightbox+1)%currentGallery.length;lightboxImg.src=currentGallery[currentLightbox];}
+    function closeLightbox(){document.getElementById('lightbox').classList.remove('active');}
+    function prevImage(){
+      currentIndex=(currentIndex-1+currentImages.length)%currentImages.length;
+      document.getElementById('lightboxImage').src=currentImages[currentIndex];
+    }
+    function nextImage(){
+      currentIndex=(currentIndex+1)%currentImages.length;
+      document.getElementById('lightboxImage').src=currentImages[currentIndex];
+    }
   </script>
 </body>
 </html>
