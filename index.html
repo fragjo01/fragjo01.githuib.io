@@ -34,7 +34,7 @@ a:hover{color:#0b3b5a;}
 /* Header */
 .site-header{background:linear-gradient(180deg,var(--navy-900),var(--navy-700));padding:20px 0;box-shadow:0 4px 18px rgba(6,36,58,0.18);}
 .header-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
-.brand h1{font-size:24px;margin:0;letter-spacing:0.4px;color:#ffd700;}
+.brand h1{font-size:24px;margin:0;letter-spacing:0.4px;color:white;}
 .role{margin:4px 0 0 0;font-size:14px;color:rgba(255,255,255,0.85);}
 .main-nav{display:flex;gap:8px;flex-wrap:wrap;}
 .tab-btn{background:transparent;border:none;color:rgba(255,255,255,0.95);padding:8px 12px;border-radius:4px;font-weight:600;cursor:pointer;font-size:14px;transition:0.2s;}
@@ -153,6 +153,7 @@ main{padding:36px 0;min-height:60vh;}
 
 <!-- Projects -->
 <section id="projects" class="tab-content">
+
   <!-- Tennis Project -->
   <div class="project-body">
     <div class="project-meta">
@@ -163,6 +164,27 @@ main{padding:36px 0;min-height:60vh;}
     </div>
     <div class="gallery-grid" id="tennisGallery"></div>
   </div>
+
+  <!-- Sports Car Price Analysis -->
+  <div class="project-body">
+    <div class="project-meta">
+      <h3 class="project-title">Sports Car Price Analysis</h3>
+      <div class="project-comments">done</div>
+      <div class="project-details"><strong>How I Did It:</strong><p><!-- Explanation --></p></div>
+    </div>
+    <div class="gallery-grid" id="sportsCarGallery"></div>
+  </div>
+
+  <!-- Stock Forecast Project -->
+  <div class="project-body">
+    <div class="project-meta">
+      <h3 class="project-title">Stock Forecast Project</h3>
+      <div class="project-comments">done</div>
+      <div class="project-details"><strong>How I Did It:</strong><p><!-- Explanation --></p></div>
+    </div>
+    <div class="gallery-grid" id="stockGallery"></div>
+  </div>
+
 </section>
 
 <!-- Contact -->
@@ -188,7 +210,7 @@ main{padding:36px 0;min-height:60vh;}
   <div class="container footer-inner">© <span id="year"></span> Joao Benvenutti</div>
 </footer>
 
-<!-- Modal for projects -->
+<!-- Modal -->
 <div id="projectModal" class="modal">
   <span class="modal-close">&times;</span>
   <div class="modal-content">
@@ -208,7 +230,7 @@ function openTab(name, el){
   window.scrollTo({ top:0, behavior:"smooth"});
 }
 
-// Tennis images with modal
+// Tennis Images
 const tennisScreenshots = [
   "assets/tennisproject/Screenshot 2025-11-28 at 13.59.51.png",
   "assets/tennisproject/Screenshot 2025-11-28 at 13.59.59.png",
@@ -225,32 +247,53 @@ const tennisScreenshots = [
   "assets/tennisproject/Screenshot 2025-11-28 at 14.02.17.png"
 ];
 
-const tennisGallery = document.getElementById("tennisGallery");
+// Sports Car Images
+const sportsCarScreenshots = [
+  "assets/sportscars/actual_vs_predicted_price.pdf",
+  "assets/sportscars/hp_per_dollar.pdf",
+  "assets/sportscars/speed_vs_price.pdf",
+  "assets/sportscars/torque_per_dollar.pdf"
+];
+
+// Stock Images
+const stockScreenshots = [
+  "assets/stockforecasting/aapl_forecast_vs_actual.png",
+  "assets/stockforecasting/amzn_forecast_1year.png",
+  "assets/stockforecasting/actual_vs_predicted_price.pdf",
+  "assets/stockforecasting/trend_ranking_bar_chart.png"
+];
+
+// Modal Elements
 const modal = document.getElementById("projectModal");
 const modalImage = document.getElementById("modalImage");
 const modalIframe = document.getElementById("modalIframe");
 const modalClose = document.querySelector(".modal-close");
 
-tennisScreenshots.forEach(src => {
-  const img = document.createElement("img");
-  img.src = src;
-  img.onclick = () => {
-    if(src.endsWith(".pdf")){
-      modalIframe.src = src;
-      modalIframe.style.display="block";
-      modalImage.style.display="none";
-    } else {
-      modalImage.src = src;
-      modalImage.style.display="block";
-      modalIframe.style.display="none";
+function createGallery(galleryId, items){
+  const gallery = document.getElementById(galleryId);
+  items.forEach(src=>{
+    const el = document.createElement(src.endsWith(".pdf") ? "iframe":"img");
+    el.src=src;
+    el.style.height="180px";
+    el.style.width="100%";
+    el.style.objectFit="cover";
+    el.style.cursor="pointer";
+    el.onclick = ()=>{
+      if(src.endsWith(".pdf")){
+        modalIframe.src=src; modalIframe.style.display="block"; modalImage.style.display="none";
+      } else { modalImage.src=src; modalImage.style.display="block"; modalIframe.style.display="none"; }
+      modal.style.display="block";
     }
-    modal.style.display="block";
-  }
-  tennisGallery.appendChild(img);
-});
+    gallery.appendChild(el);
+  });
+}
 
-modalClose.onclick = () => {modal.style.display="none";}
-window.onclick = e => {if(e.target==modal){modal.style.display="none";}}
+createGallery("tennisGallery", tennisScreenshots);
+createGallery("sportsCarGallery", sportsCarScreenshots);
+createGallery("stockGallery", stockScreenshots);
+
+modalClose.onclick = ()=>{modal.style.display="none";}
+window.onclick = e=>{if(e.target==modal){modal.style.display="none";}}
 </script>
 
 </body>
