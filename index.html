@@ -174,8 +174,38 @@
       </div>
     </div>
 
-    <!-- Other projects can be added similarly with galleries -->
-    
+    <!-- Sports Car Project -->
+    <div class="project-body">
+      <div class="project-meta">
+        <h3 class="project-title">Sports Car Price Analysis</h3>
+        <div class="project-details">
+          <strong>How I Did It:</strong>
+          <p>
+            This project analyzed high-end sports cars to evaluate performance vs. price trade-offs using R and tidyverse. I cleaned the dataset, engineered features, and created visualizations including horsepower per dollar, torque per dollar, and acceleration vs. price. Insights include some cars delivering higher performance per dollar, and top 20 rankings highlighting the best value cars. The workflow consisted of data cleaning, feature engineering, visualization, and report generation in Jupyter notebooks with R kernel.
+          </p>
+        </div>
+      </div>
+      <div class="gallery-panel">
+        <div class="gallery-grid" id="carGallery"></div>
+      </div>
+    </div>
+
+    <!-- Stock Forecast Project -->
+    <div class="project-body">
+      <div class="project-meta">
+        <h3 class="project-title">Simple Stock Forecast Project</h3>
+        <div class="project-details">
+          <strong>How I Did It:</strong>
+          <p>
+            This project used SQL, Python with Prophet, and Power BI to forecast stock prices for AAPL, MSFT, AMZN, and GOOGL. I filtered and prepared data using SQL, ran Prophet to forecast prices for one year, plotted forecast vs. actual values, created comparative bar charts, and optionally built dashboards in Power BI. All code is reproducible in Jupyter notebooks, and results include charts for forecasts and trends.
+          </p>
+        </div>
+      </div>
+      <div class="gallery-panel">
+        <div class="gallery-grid" id="stockGallery"></div>
+      </div>
+    </div>
+
   </section>
 
   <!-- Resume Section -->
@@ -196,7 +226,6 @@
   </div>
 </footer>
 
-<!-- JS -->
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -224,13 +253,42 @@
     "assets/tennisproject/Screenshot 2025-11-28 at 14.01.40.png",
     "assets/tennisproject/Screenshot 2025-11-28 at 14.02.17.png"
   ];
-
   const tennisGallery = document.getElementById("tennisGallery");
   tennisScreenshots.forEach(src => {
     const img = document.createElement("img");
     img.src = src;
-    img.onclick = () => { window.open(src, "_blank"); }; // open full image in new tab
+    img.onclick = () => { window.open(src, "_blank"); };
     tennisGallery.appendChild(img);
+  });
+
+  // Sports Car project PDFs
+  const carFiles = [
+    "assets/sportscars/actual_vs_predicted_price.pdf",
+    "assets/sportscars/hp_per_dollar.pdf",
+    "assets/sportscars/speed_vs_price.pdf",
+    "assets/sportscars/torque_per_dollar.pdf"
+  ];
+  const carGallery = document.getElementById("carGallery");
+  carFiles.forEach(src => {
+    const iframe = document.createElement("iframe");
+    iframe.src = src;
+    iframe.onclick = () => { window.open(src, "_blank"); };
+    carGallery.appendChild(iframe);
+  });
+
+  // Stock project images
+  const stockFiles = [
+    "assets/stockforecasting/aapl_forecast_vs_actual.png",
+    "assets/stockforecasting/amzn_forecast_1year.png",
+    "assets/stockforecasting/actual_vs_predicted_price.pdf",
+    "assets/stockforecasting/trend_ranking_bar_chart.png"
+  ];
+  const stockGallery = document.getElementById("stockGallery");
+  stockFiles.forEach(src => {
+    const el = src.endsWith(".pdf") ? document.createElement("iframe") : document.createElement("img");
+    el.src = src;
+    el.onclick = () => { window.open(src, "_blank"); };
+    stockGallery.appendChild(el);
   });
 </script>
 
