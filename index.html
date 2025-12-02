@@ -14,14 +14,15 @@
       --white: #ffffff;
       --radius: 6px;
       --container: 1100px;
-      --media-width: 300px;
-      --media-height: 200px;
+      --media-width: 320px;
+      --media-height: 180px;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html,body{height:100%;scroll-behavior:smooth}
     body{
       font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       color:#0f1724;background:#f7f9fb;
+      line-height:1.6;
     }
     .container{max-width:var(--container);margin:0 auto;padding:0 20px}
     .site-header{
@@ -30,7 +31,7 @@
       box-shadow:0 4px 18px rgba(6,36,58,0.18);
     }
     .header-inner{display:flex;align-items:center;gap:20px;justify-content:space-between;flex-wrap:wrap}
-    .brand h1{font-size:20px;margin:0;font-weight:700;letter-spacing:0.4px; color:#ffffff;}
+    .brand h1{font-size:22px;margin:0;font-weight:700;letter-spacing:0.4px; color: #fff;}
     .role{margin:4px 0 0 0;font-size:13px;color:rgba(255,255,255,0.85)}
     .main-nav{display:flex;gap:8px;flex-wrap:wrap}
     .tab-btn{
@@ -52,7 +53,7 @@
     .tab-content.active{display:block}
     .about-grid{
       display:grid;grid-template-columns:280px 1fr;gap:28px;
-      align-items:center;margin-top:20px
+      align-items:start;margin-top:20px
     }
     .profile{
       width:280px;height:280px;object-fit:cover;border-radius:8px;
@@ -61,7 +62,14 @@
       display:block;
     }
     .about-text h2{margin:0 0 12px 0;color:var(--navy-900);font-size:28px}
-    .lead{color:var(--muted);font-size:15px;line-height:1.6;margin:12px 0}
+    .lead{color:var(--muted);font-size:15px;margin:12px 0}
+    .skills-section{
+      background:#f0f4f8;padding:20px;margin:20px 0;border-radius:8px;
+      box-shadow:0 3px 8px rgba(0,0,0,0.05);
+    }
+    .skills-section h3{margin-bottom:12px;color:var(--navy-900)}
+    .skills-section ul{list-style:none;padding-left:0}
+    .skills-section li{margin-bottom:6px}
     .resume-viewer {
       width: 100%;
       height: 900px;
@@ -70,37 +78,29 @@
       box-shadow: 0 4px 14px rgba(0,0,0,0.08);
       margin-top: 20px;
     }
-    .project-header{text-align:left;margin-bottom:24px}
-    .project-body{margin-bottom:40px;}
-    .project-meta h3{margin-bottom:10px;color:var(--navy-900);}
+    .project-body{margin-bottom:40px}
+    .project-meta h3{margin-bottom:8px;color:var(--navy-900)}
     .project-details{
-      margin-bottom:12px;
-      padding:12px;
-      background:#f0f4f8;
-      border-radius:8px;
+      margin-bottom:12px; padding:10px; background:#f0f4f8; border-radius:8px; 
       box-shadow:0 3px 8px rgba(0,0,0,0.05);
-      line-height:1.5;
     }
-    .gallery-grid {
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap:12px;
+    .gallery-grid{
+      display:flex; flex-wrap:wrap; gap:12px;
     }
-    .gallery-grid img, .gallery-grid iframe {
-      width:100%;
-      height:180px;
-      object-fit:cover;
-      border-radius:6px;
+    .gallery-grid img, .gallery-grid iframe{
+      width:320px; height:180px; object-fit:cover; border-radius:6px;
       cursor:pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .gallery-grid img:hover, .gallery-grid iframe:hover {
-      transform:scale(1.05);
-      box-shadow:0 8px 20px rgba(0,0,0,0.2);
     }
     .site-footer{
       background:var(--navy-900);color:var(--white);
       padding:18px 0;margin-top:48px;
+    }
+    a {color: var(--accent); text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    @media(max-width:768px){
+      .about-grid{grid-template-columns:1fr; gap:16px}
+      .gallery-grid{justify-content:center}
+      .gallery-grid img, .gallery-grid iframe{width:100%; height:auto;}
     }
   </style>
 </head>
@@ -129,28 +129,40 @@
 
 <main class="container">
 
-  <!-- About Section -->
+  <!-- About Me -->
   <section id="about" class="tab-content active">
     <div class="about-grid">
       <img class="profile" src="assets/profile.jpeg" alt="Joao Benvenutti profile photo" />
       <div class="about-text">
         <h2>About Me</h2>
         <p class="lead">
-          Data Science major and Computer Science minor at Luther College, passionate about transforming complex datasets into actionable insights.
+          I am a Data Science major and Computer Science minor at Luther College (GPA 3.1/4.0), anticipating graduation in December 2026. I specialize in data analysis, machine learning, and data visualization using Python, R, SQL, and Power BI. I have completed multiple applied modeling and forecasting projects, developing strong analytical and statistical skills.
         </p>
-        <p class="lead">Phone: +1 201-496-1578 • Email: fragjo01@luther.edu</p>
+        <p class="lead">
+          My professional experience includes Data Science Intern at Winneshiek Energy District, Business & Data Analyst Intern at DGS Etiquetas, IA Research, and volunteer tennis coordinator roles. I have applied data-driven insights to dashboards, sustainability analysis, and reporting improvements.
+        </p>
+        <p class="lead">
+          Active member of the Luther College Men's Tennis Team with awards such as Male Sport Newcomer of the Year (2024) and A-R-C Individual Tournament Champion Singles & Doubles (2025).
+        </p>
+        <p class="lead">
+          <strong>Contact:</strong> 201-496-1578 • <a href="mailto:fragjo01@luther.edu">fragjo01@luther.edu</a> • 
+          <a href="https://www.linkedin.com/in/joao-benvenutti-055585330/" target="_blank">LinkedIn</a> • 
+          <a href="https://fragjo01.github.io/fragjo01.github.io/" target="_blank">Portfolio</a>
+        </p>
       </div>
     </div>
   </section>
 
   <!-- Skills Section -->
   <section id="skills" class="tab-content">
-    <h2>Technical Skills & Coursework</h2>
-    <div class="project-details">
-      <strong>Programming & Tools:</strong> Python, SQL, R, Java, JavaScript, HTML, CSS, Power BI, Tableau, Jupyter Notebooks, PyCharm, VS Code, RStudio, Power Pivot, Microsoft Excel (Intermediate/Advanced), Microsoft PowerPoint, Microsoft Word<br>
-      <strong>Data & Analytics:</strong> Data cleaning, data visualization, data querying, dashboard development, automation, problem solving<br>
-      <strong>Other Competencies:</strong> Communication, collaborative teamwork, project coordination<br>
-      <strong>Relevant Coursework:</strong> Fundamentals of Web Programming (CS130), Intro to Computer Science (CS150), Data Modeling & Querying (CS140), Algorithms & Data Structures (CS160), Object-Oriented Programming with Java (CS252), Internet Programming (CS330), DT Proficiency (CS499), Introduction to Data Science (DS120), Data Analysis & Visualization (DS320), Applied Machine Learning (DS420), Regression Modeling (MATH327), Data Analytics for Business Decision-Making (MGT250), Statistics (MGT150), Principles of Microeconomics (ECON139), Introduction to Business (MGT110)
+    <div class="skills-section">
+      <h3>Technical Skills & Relevant Coursework</h3>
+      <ul>
+        <li><strong>Programming & Tools:</strong> Python, SQL, R, Java, JavaScript, HTML, CSS, Power BI, Tableau, Jupyter Notebooks, PyCharm, VS Code, RStudio, Power Pivot, Excel (Intermediate/Advanced), PowerPoint, Word</li>
+        <li><strong>Data & Analytics:</strong> Data cleaning, data visualization, data querying, dashboard development, automation, problem solving</li>
+        <li><strong>Other Competencies:</strong> Communication, collaborative teamwork, project coordination</li>
+        <li><strong>Relevant Coursework:</strong> CS130, CS150, CS140, CS160, CS252, CS330, CS499, DS120, DS320, DS420, MATH327, MGT250, MGT150, ECON139, MGT110</li>
+      </ul>
     </div>
   </section>
 
@@ -163,49 +175,46 @@
         <h3 class="project-title">Tennis Analytics — Case Study</h3>
         <div class="project-details">
           <strong>How I Did It:</strong>
-          <p>
-            This project analyzed over 350,000 professional tennis matches from the ATP and ITF circuits to predict match duration. I used match-level statistics such as total points played, number of sets, aces, double faults, and court surface. To handle skewed durations, a log transformation was applied. Linear regression models, including interaction effects, were built and validated using residual diagnostics and cross-validation. The final model explains approximately 83% of match duration variation. Key insights include: more total points and service/return points lengthen matches, while aces and double faults shorten them. Clay courts tend to produce longer matches than grass or hard surfaces. The model provides strong predictive coverage, with 99.63% of observed durations falling within prediction intervals, offering actionable insights for players, coaches, and tournament organizers.
-          </p>
-          <a class="btn" href="assets/tennisproject/project1.html" target="_blank" style="text-decoration:none; color:#1e88e5;">View Project Report</a>
+          <p>This project analyzed over 350,000 professional tennis matches to predict match duration using regression and interaction effects. Data cleaning, log transformations, stepwise regression, and interaction terms were applied to build a linear regression model. Key insights and predictive intervals were validated with cross-validation and residual analysis.</p>
         </div>
       </div>
-      <div class="gallery-panel">
-        <div class="gallery-grid" id="tennisGallery"></div>
-      </div>
+      <div class="gallery-grid" id="tennisGallery"></div>
+      <div><a class="btn" href="assets/tennisproject/project1.html" target="_blank">Project Report</a></div>
     </div>
 
-    <!-- Sports Car Project -->
+    <!-- Sports Car Price Analysis -->
     <div class="project-body">
       <div class="project-meta">
         <h3 class="project-title">Sports Car Price Analysis</h3>
         <div class="project-details">
           <strong>How I Did It:</strong>
-          <p>
-            This project analyzed high-end sports cars to evaluate performance vs. price trade-offs using R and tidyverse. I cleaned the dataset, engineered features, and created visualizations including horsepower per dollar, torque per dollar, and acceleration vs. price. Insights include some cars delivering higher performance per dollar, and top 20 rankings highlighting the best value cars. The workflow consisted of data cleaning, feature engineering, visualization, and report generation in Jupyter notebooks with R kernel.
-          </p>
+          <p>Analyzed performance vs. price trade-offs in high-end sports cars using R. Performed data cleaning, feature engineering, and visualizations. Evaluated horsepower, torque, acceleration relative to price, and highlighted best value cars using charts and rankings.</p>
         </div>
       </div>
-      <div class="gallery-panel">
-        <div class="gallery-grid" id="carGallery"></div>
+      <div class="gallery-grid">
+        <iframe src="assets/sportscars/actual_vs_predicted_price.pdf"></iframe>
+        <iframe src="assets/sportscars/hp_per_dollar.pdf"></iframe>
+        <iframe src="assets/sportscars/speed_vs_price.pdf"></iframe>
+        <iframe src="assets/sportscars/torque_per_dollar.pdf"></iframe>
       </div>
     </div>
 
     <!-- Stock Forecast Project -->
     <div class="project-body">
       <div class="project-meta">
-        <h3 class="project-title">Simple Stock Forecast Project</h3>
+        <h3 class="project-title">Stock Forecast Project</h3>
         <div class="project-details">
           <strong>How I Did It:</strong>
-          <p>
-            This project used SQL, Python with Prophet, and Power BI to forecast stock prices for AAPL, MSFT, AMZN, and GOOGL. I filtered and prepared data using SQL, ran Prophet to forecast prices for one year, plotted forecast vs. actual values, created comparative bar charts, and optionally built dashboards in Power BI. All code is reproducible in Jupyter notebooks, and results include charts for forecasts and trends.
-          </p>
+          <p>Used SQL to filter stock data and Python with Prophet to forecast prices for AAPL, MSFT, AMZN, and GOOGL. Visualized forecast vs actuals, created bar charts, and optionally developed dashboards in Power BI for better insights.</p>
         </div>
       </div>
-      <div class="gallery-panel">
-        <div class="gallery-grid" id="stockGallery"></div>
+      <div class="gallery-grid">
+        <img src="assets/stockforecasting/aapl_forecast_vs_actual.png" alt="AAPL Forecast vs Actual">
+        <img src="assets/stockforecasting/amzn_forecast_1year.png" alt="AMZN Forecast 1 Year">
+        <iframe src="assets/stockforecasting/actual_vs_predicted_price.pdf"></iframe>
+        <img src="assets/stockforecasting/trend_ranking_bar_chart.png" alt="Trend Ranking Chart">
       </div>
     </div>
-
   </section>
 
   <!-- Resume Section -->
@@ -237,7 +246,7 @@
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
-  // Tennis project images
+  // Tennis screenshots
   const tennisScreenshots = [
     "assets/tennisproject/Screenshot 2025-11-28 at 13.59.51.png",
     "assets/tennisproject/Screenshot 2025-11-28 at 13.59.59.png",
@@ -253,42 +262,14 @@
     "assets/tennisproject/Screenshot 2025-11-28 at 14.01.40.png",
     "assets/tennisproject/Screenshot 2025-11-28 at 14.02.17.png"
   ];
+
   const tennisGallery = document.getElementById("tennisGallery");
   tennisScreenshots.forEach(src => {
     const img = document.createElement("img");
     img.src = src;
-    img.onclick = () => { window.open(src, "_blank"); };
+    img.alt = "Tennis Project Screenshot";
+    img.onclick = () => window.open(src, "_blank");
     tennisGallery.appendChild(img);
-  });
-
-  // Sports Car project PDFs
-  const carFiles = [
-    "assets/sportscars/actual_vs_predicted_price.pdf",
-    "assets/sportscars/hp_per_dollar.pdf",
-    "assets/sportscars/speed_vs_price.pdf",
-    "assets/sportscars/torque_per_dollar.pdf"
-  ];
-  const carGallery = document.getElementById("carGallery");
-  carFiles.forEach(src => {
-    const iframe = document.createElement("iframe");
-    iframe.src = src;
-    iframe.onclick = () => { window.open(src, "_blank"); };
-    carGallery.appendChild(iframe);
-  });
-
-  // Stock project images
-  const stockFiles = [
-    "assets/stockforecasting/aapl_forecast_vs_actual.png",
-    "assets/stockforecasting/amzn_forecast_1year.png",
-    "assets/stockforecasting/actual_vs_predicted_price.pdf",
-    "assets/stockforecasting/trend_ranking_bar_chart.png"
-  ];
-  const stockGallery = document.getElementById("stockGallery");
-  stockFiles.forEach(src => {
-    const el = src.endsWith(".pdf") ? document.createElement("iframe") : document.createElement("img");
-    el.src = src;
-    el.onclick = () => { window.open(src, "_blank"); };
-    stockGallery.appendChild(el);
   });
 </script>
 
