@@ -175,7 +175,13 @@
         <h3 class="project-title">Tennis Analytics — Case Study</h3>
         <div class="project-details">
           <strong>How I Did It:</strong>
-          <p>This project analyzed over 350,000 professional tennis matches to predict match duration using regression and interaction effects. Data cleaning, log transformations, stepwise regression, and interaction terms were applied to build a linear regression model. Key insights and predictive intervals were validated with cross-validation and residual analysis.</p>
+          <p>
+            This project analyzes over 350,000 professional tennis matches from ATP and ITF circuits to identify key factors influencing match duration. Using match-level statistics including total points played, number of sets, aces, double faults, and court surface, I developed a linear regression model. 
+            To address skewness in match duration, I applied a log transformation and assessed model performance through residual diagnostics and cross-validation. 
+            Stepwise selection and interaction effects were incorporated to refine the model. 
+            I evaluated the model on six representative matches showing predicted durations and prediction intervals, and confirmed that across the dataset, 99.63% of observed durations fell within their prediction intervals. 
+            Findings highlighted that total points played is the strongest predictor, aces and double faults tend to shorten matches, and clay courts generally produce longer matches than hard or grass surfaces.
+          </p>
         </div>
       </div>
       <div class="gallery-grid" id="tennisGallery"></div>
@@ -188,7 +194,12 @@
         <h3 class="project-title">Sports Car Price Analysis</h3>
         <div class="project-details">
           <strong>How I Did It:</strong>
-          <p>Analyzed performance vs. price trade-offs in high-end sports cars using R. Performed data cleaning, feature engineering, and visualizations. Evaluated horsepower, torque, acceleration relative to price, and highlighted best value cars using charts and rankings.</p>
+          <p>
+            This project analyzed the performance vs. price trade-off in high-end sports cars using R. I started by cleaning and processing the raw dataset, then engineered features to evaluate horsepower, torque, and acceleration relative to price. 
+            Visualizations were created using ggplot2 in Jupyter notebooks with R kernel to identify cars delivering higher performance per dollar. 
+            I generated charts such as Speed per Dollar, Horsepower per Dollar, and Torque per Dollar, ranking the top 20 best-value sports cars. 
+            The final outputs included processed datasets and visual charts stored in CSV and PDF formats, providing actionable insights for evaluating car performance efficiency relative to cost.
+          </p>
         </div>
       </div>
       <div class="gallery-grid">
@@ -205,7 +216,11 @@
         <h3 class="project-title">Stock Forecast Project</h3>
         <div class="project-details">
           <strong>How I Did It:</strong>
-          <p>Used SQL to filter stock data and Python with Prophet to forecast prices for AAPL, MSFT, AMZN, and GOOGL. Visualized forecast vs actuals, created bar charts, and optionally developed dashboards in Power BI for better insights.</p>
+          <p>
+            For this project, I used SQL to filter stock data for AAPL, MSFT, AMZN, and GOOGL, then applied Python with Prophet to forecast prices for 1 year. 
+            I visualized forecasts vs. actual stock prices, created bar charts to compare expected growth, and optionally developed dashboards in Power BI for interactive insights. 
+            All analysis and visualizations were organized in Jupyter notebooks, and outputs including charts and forecast files were stored in structured folders for easy access and review.
+          </p>
         </div>
       </div>
       <div class="gallery-grid">
